@@ -45,8 +45,8 @@ const qualifiedTeams = [
   { teamId: 'ouganda', teamName: 'Ouganda', position: 3, groupId: 'C', targetPoints: 3 },
   
   // Groupe D
-  { teamId: 'senegal', teamName: 'Sénégal', position: 1, groupId: 'D', targetPoints: 5 },
-  { teamId: 'rd-congo', teamName: 'RD Congo', position: 2, groupId: 'D', targetPoints: 5 },
+  { teamId: 'senegal', teamName: 'Sénégal', position: 1, groupId: 'D', targetPoints: 7 },
+  { teamId: 'rd-congo', teamName: 'RD Congo', position: 2, groupId: 'D', targetPoints: 4 },
   
   // Groupe E
   { teamId: 'algerie', teamName: 'Algérie', position: 1, groupId: 'E', targetPoints: 9 },
@@ -778,7 +778,8 @@ const generatePronostics = () => {
           const maxAllowedPoints = minQualifiedPoints - 1;
           
           // Réduire les points en changeant des victoires en défaites ou nuls en défaites
-          while (team.points > maxAllowedPoints && teamMatches.length > 0) {
+          // Utiliser >= au lieu de > pour garantir que les équipes non qualifiées ont strictement moins de points
+          while (team.points >= minQualifiedPoints && teamMatches.length > 0) {
             // Trouver un match où l'équipe a gagné ou fait match nul
             const winMatch = teamMatches.find(m => {
               const isT1 = m.team1 === team.id;
