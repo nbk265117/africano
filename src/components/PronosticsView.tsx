@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { qualifiedTeams, QualifiedTeam } from '../data/qualifications';
+import { qualifiedTeams } from '../data/qualifications';
+import type { QualifiedTeam } from '../data/qualifications';
 import { groups } from '../data/groups';
 import './PronosticsView.css';
 

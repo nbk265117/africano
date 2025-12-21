@@ -1,4 +1,4 @@
-export type Match = {
+export interface Match {
   id: string;
   groupId: string;
   team1: string;

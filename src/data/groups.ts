@@ -1,4 +1,4 @@
-export type Team = {
+export interface Team {
   id: string;
   name: string;
   flag: string;
@@ -12,7 +12,7 @@ export type Team = {
   points: number;
 }
 
-export type Group = {
+export interface Group {
   id: string;
   name: string;
   teams: Team[];
