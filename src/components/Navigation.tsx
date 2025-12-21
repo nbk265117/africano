@@ -33,10 +33,10 @@ export default function Navigation() {
   return (
     <nav className="main-navigation">
       <div className="nav-container">
-        <div className="nav-logo">
+        <a href="/" className="nav-logo">
           <span className="logo-icon">🏆</span>
           <span className="logo-text">CAN 2025</span>
-        </div>
+        </a>
         <div className="nav-buttons">
           <a 
             href="/" 
