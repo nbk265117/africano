@@ -205,6 +205,21 @@ const getTeamPosition = (teamId, groupId) => {
   return qualified ? qualified.position : null;
 };
 
+// Générer un score de match nul en favorisant les scores avec buts plutôt que 0-0
+const generateDrawScore = () => {
+  const random = Math.random();
+  if (random < 0.7) {
+    // 70% de chance d'avoir 1-1
+    return 1;
+  } else if (random < 0.9) {
+    // 20% de chance d'avoir 2-2
+    return 2;
+  } else {
+    // 10% de chance d'avoir 0-0 (réduit)
+    return 0;
+  }
+};
+
 // Simuler un match de groupe en tenant compte des équipes qualifiées avec logique plus réaliste
 const simulateGroupMatch = (team1, team2, groupId) => {
   const team1Position = getTeamPosition(team1, groupId);
@@ -222,10 +237,21 @@ const simulateGroupMatch = (team1, team2, groupId) => {
     const positionDiff = team1Position - team2Position;
     
     if (random < drawProbability) {
-      // Match nul (20-25% de chance)
-      const drawScore = Math.floor(Math.random() * 2); // 0-0, 1-1, ou 2-2
-      team1Score = drawScore;
-      team2Score = drawScore;
+      // Match nul (20-25% de chance) - favoriser les scores avec buts (1-1, 2-2) plutôt que 0-0
+      const drawRandom = Math.random();
+      if (drawRandom < 0.7) {
+        // 70% de chance d'avoir 1-1
+        team1Score = 1;
+        team2Score = 1;
+      } else if (drawRandom < 0.9) {
+        // 20% de chance d'avoir 2-2
+        team1Score = 2;
+        team2Score = 2;
+      } else {
+        // 10% de chance d'avoir 0-0 (réduit)
+        team1Score = 0;
+        team2Score = 0;
+      }
     } else if (positionDiff < 0) {
       // Team1 mieux classée (position 1 vs 2, ou 1 vs 3, etc.)
       const advantage = Math.abs(positionDiff);
@@ -258,10 +284,15 @@ const simulateGroupMatch = (team1, team2, groupId) => {
     } else {
       // Même position, match très serré
       if (random < 0.3) {
-        // Match nul (30% de chance)
-        const drawScore = Math.floor(Math.random() * 2);
-        team1Score = drawScore;
-        team2Score = drawScore;
+        // Match nul (30% de chance) - favoriser 1-1 plutôt que 0-0
+        const drawRandom = Math.random();
+        if (drawRandom < 0.8) {
+          team1Score = 1;
+          team2Score = 1;
+        } else {
+          team1Score = 0;
+          team2Score = 0;
+        }
       } else {
         // Victoire serrée (70% de chance)
         const score = Math.floor(Math.random() * 2);
@@ -277,10 +308,15 @@ const simulateGroupMatch = (team1, team2, groupId) => {
   } else if (team1Position !== null) {
     // Team1 qualifiée, Team2 non qualifiée
     if (random < 0.25) {
-      // Match nul possible (25%)
-      const drawScore = Math.floor(Math.random() * 2);
-      team1Score = drawScore;
-      team2Score = drawScore;
+      // Match nul possible (25%) - favoriser 1-1 plutôt que 0-0
+      const drawRandom = Math.random();
+      if (drawRandom < 0.8) {
+        team1Score = 1;
+        team2Score = 1;
+      } else {
+        team1Score = 0;
+        team2Score = 0;
+      }
     } else if (random < 0.75) {
       // Victoire Team1 (50%)
       team1Score = Math.floor(Math.random() * 3) + 1;
@@ -310,10 +346,15 @@ const simulateGroupMatch = (team1, team2, groupId) => {
   } else {
     // Aucune équipe qualifiée, match équilibré
     if (random < 0.3) {
-      // Match nul (30%)
-      const drawScore = Math.floor(Math.random() * 2);
-      team1Score = drawScore;
-      team2Score = drawScore;
+      // Match nul (30%) - favoriser 1-1 plutôt que 0-0
+      const drawRandom = Math.random();
+      if (drawRandom < 0.8) {
+        team1Score = 1;
+        team2Score = 1;
+      } else {
+        team1Score = 0;
+        team2Score = 0;
+      }
     } else {
       // Victoire serrée (70%)
       const score = Math.floor(Math.random() * 2);
@@ -506,7 +547,7 @@ const generatePronostics = () => {
           team1Counts.wins++;
           team2Counts.losses++;
         } else if (team1Counts.draws < team1Req.draws) {
-          const drawScore = Math.floor(Math.random() * 2);
+          const drawScore = generateDrawScore();
           result = { score1: drawScore, score2: drawScore };
           team1Counts.draws++;
           team2Counts.draws++;
@@ -522,7 +563,7 @@ const generatePronostics = () => {
           team2Counts.wins++;
           team1Counts.losses++;
         } else if (team2Counts.draws < team2Req.draws) {
-          const drawScore = Math.floor(Math.random() * 2);
+          const drawScore = generateDrawScore();
           result = { score1: drawScore, score2: drawScore };
           team1Counts.draws++;
           team2Counts.draws++;
@@ -535,7 +576,7 @@ const generatePronostics = () => {
         // Aucune équipe qualifiée
         const random = Math.random();
         if (random < 0.3) {
-          const drawScore = Math.floor(Math.random() * 2);
+          const drawScore = generateDrawScore();
           result = { score1: drawScore, score2: drawScore };
           team1Counts.draws++;
           team2Counts.draws++;
@@ -630,13 +671,13 @@ const generatePronostics = () => {
             if (currentResult === 'loss') currentPoints += 0;
           } else if (pointsNeeded === 1 && currentResult === 'loss') {
             // Besoin d'un nul
-            const drawScore = Math.floor(Math.random() * 2);
+            const drawScore = generateDrawScore();
             match.score1 = drawScore;
             match.score2 = drawScore;
             currentPoints += 1;
           } else if (pointsNeeded === -2 && currentResult === 'win') {
             // Changer une victoire en nul
-            const drawScore = Math.floor(Math.random() * 2);
+            const drawScore = generateDrawScore();
             match.score1 = drawScore;
             match.score2 = drawScore;
             currentPoints -= 2;
@@ -1200,7 +1241,7 @@ const generatePronostics = () => {
               
               if (score1 > score2) {
                 // Victoire -> changer en nul pour réduire les points
-                const drawScore = Math.floor(Math.random() * 2);
+                const drawScore = generateDrawScore();
                 if (isTeam1) {
                   match.score1 = drawScore;
                   match.score2 = drawScore;
