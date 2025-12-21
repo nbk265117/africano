@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { matches } from '../data/matches';
 import { groups } from '../data/groups';
 import MatchCard from './MatchCard';
+import Navigation from './Navigation';
 import './MatchesView.css';
 
 export default function MatchesView() {
@@ -38,11 +39,13 @@ export default function MatchesView() {
   };
 
   return (
-    <div className="matches-container">
-      <header className="matches-header">
-        <h1 className="matches-title">Calendrier des Matchs</h1>
-        <p className="matches-subtitle">CAN 2025 - Maroc 🇲🇦</p>
-      </header>
+    <>
+      <Navigation />
+      <div className="matches-container">
+        <header className="matches-header">
+          <h1 className="matches-title">Calendrier des Matchs</h1>
+          <p className="matches-subtitle">CAN 2025 - Maroc 🇲🇦</p>
+        </header>
 
       <div className="filter-section">
         <label htmlFor="group-filter" className="filter-label">Filtrer par groupe:</label>
@@ -114,6 +117,7 @@ export default function MatchesView() {
         </nav>
       </footer>
     </div>
+    </>
   );
 }
 

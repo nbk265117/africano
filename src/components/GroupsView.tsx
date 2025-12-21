@@ -1,10 +1,13 @@
 import { groups } from '../data/groups';
 import GroupTable from './GroupTable';
+import Navigation from './Navigation';
 import './GroupsView.css';
 
 export default function GroupsView() {
   return (
-    <div className="groups-container">
+    <>
+      <Navigation />
+      <div className="groups-container">
       <header className="app-header">
         <div className="header-content">
           <h1 className="main-title">
@@ -12,11 +15,6 @@ export default function GroupsView() {
             Coupe d'Afrique des Nations 2025
           </h1>
           <p className="subtitle">Maroc 🇲🇦</p>
-          <div className="header-decoration">
-            <div className="decoration-line"></div>
-            <div className="decoration-star">★</div>
-            <div className="decoration-line"></div>
-          </div>
         </div>
       </header>
 
@@ -44,6 +42,7 @@ export default function GroupsView() {
         </nav>
       </footer>
     </div>
+    </>
   );
 }
 
