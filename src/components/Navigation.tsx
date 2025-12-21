@@ -52,6 +52,13 @@ export default function Navigation() {
             <span className="button-icon">⚽</span>
             <span className="button-text">Matchs</span>
           </a>
+          <a 
+            href="/pronostics" 
+            className={`nav-button ${currentPath === '/pronostics' ? 'active' : ''}`}
+          >
+            <span className="button-icon">🎯</span>
+            <span className="button-text">PRO</span>
+          </a>
         </div>
       </div>
     </nav>
