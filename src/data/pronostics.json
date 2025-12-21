@@ -1,0 +1,642 @@
+{
+  "matches": [
+    {
+      "matchId": "match-1",
+      "groupId": "A",
+      "team1": "comores",
+      "team2": "maroc",
+      "score1": 0,
+      "score2": 3
+    },
+    {
+      "matchId": "match-2",
+      "groupId": "A",
+      "team1": "mali",
+      "team2": "zambie",
+      "score1": 0,
+      "score2": 0
+    },
+    {
+      "matchId": "match-15",
+      "groupId": "A",
+      "team1": "zambie",
+      "team2": "comores",
+      "score1": 1,
+      "score2": 3
+    },
+    {
+      "matchId": "match-16",
+      "groupId": "A",
+      "team1": "maroc",
+      "team2": "mali",
+      "score1": 2,
+      "score2": 1
+    },
+    {
+      "matchId": "match-27",
+      "groupId": "A",
+      "team1": "comores",
+      "team2": "mali",
+      "score1": 0,
+      "score2": 2
+    },
+    {
+      "matchId": "match-28",
+      "groupId": "A",
+      "team1": "zambie",
+      "team2": "maroc",
+      "score1": 1,
+      "score2": 3
+    },
+    {
+      "matchId": "match-3",
+      "groupId": "B",
+      "team1": "afrique-du-sud",
+      "team2": "angola",
+      "score1": 3,
+      "score2": 1
+    },
+    {
+      "matchId": "match-4",
+      "groupId": "B",
+      "team1": "egypte",
+      "team2": "zimbabwe",
+      "score1": 3,
+      "score2": 0
+    },
+    {
+      "matchId": "match-13",
+      "groupId": "B",
+      "team1": "angola",
+      "team2": "zimbabwe",
+      "score1": 3,
+      "score2": 0
+    },
+    {
+      "matchId": "match-14",
+      "groupId": "B",
+      "team1": "egypte",
+      "team2": "afrique-du-sud",
+      "score1": 2,
+      "score2": 1
+    },
+    {
+      "matchId": "match-25",
+      "groupId": "B",
+      "team1": "angola",
+      "team2": "egypte",
+      "score1": 0,
+      "score2": 0
+    },
+    {
+      "matchId": "match-26",
+      "groupId": "B",
+      "team1": "zimbabwe",
+      "team2": "afrique-du-sud",
+      "score1": 1,
+      "score2": 2
+    },
+    {
+      "matchId": "match-5",
+      "groupId": "C",
+      "team1": "nigeria",
+      "team2": "tanzanie",
+      "score1": 2,
+      "score2": 1
+    },
+    {
+      "matchId": "match-6",
+      "groupId": "C",
+      "team1": "tunisie",
+      "team2": "ouganda",
+      "score1": 2,
+      "score2": 0
+    },
+    {
+      "matchId": "match-19",
+      "groupId": "C",
+      "team1": "ouganda",
+      "team2": "tanzanie",
+      "score1": 2,
+      "score2": 1
+    },
+    {
+      "matchId": "match-20",
+      "groupId": "C",
+      "team1": "nigeria",
+      "team2": "tunisie",
+      "score1": 1,
+      "score2": 3
+    },
+    {
+      "matchId": "match-29",
+      "groupId": "C",
+      "team1": "ouganda",
+      "team2": "nigeria",
+      "score1": 1,
+      "score2": 2
+    },
+    {
+      "matchId": "match-30",
+      "groupId": "C",
+      "team1": "tanzanie",
+      "team2": "tunisie",
+      "score1": 1,
+      "score2": 3
+    },
+    {
+      "matchId": "match-7",
+      "groupId": "D",
+      "team1": "rd-congo",
+      "team2": "benin",
+      "score1": 2,
+      "score2": 1
+    },
+    {
+      "matchId": "match-8",
+      "groupId": "D",
+      "team1": "botswana",
+      "team2": "senegal",
+      "score1": 1,
+      "score2": 2
+    },
+    {
+      "matchId": "match-17",
+      "groupId": "D",
+      "team1": "benin",
+      "team2": "botswana",
+      "score1": 0,
+      "score2": 1
+    },
+    {
+      "matchId": "match-18",
+      "groupId": "D",
+      "team1": "senegal",
+      "team2": "rd-congo",
+      "score1": 1,
+      "score2": 1
+    },
+    {
+      "matchId": "match-31",
+      "groupId": "D",
+      "team1": "benin",
+      "team2": "senegal",
+      "score1": 0,
+      "score2": 0
+    },
+    {
+      "matchId": "match-32",
+      "groupId": "D",
+      "team1": "botswana",
+      "team2": "rd-congo",
+      "score1": 0,
+      "score2": 0
+    },
+    {
+      "matchId": "match-9",
+      "groupId": "E",
+      "team1": "burkina-faso",
+      "team2": "guinee-equatoriale",
+      "score1": 3,
+      "score2": 0
+    },
+    {
+      "matchId": "match-10",
+      "groupId": "E",
+      "team1": "algerie",
+      "team2": "soudan",
+      "score1": 3,
+      "score2": 1
+    },
+    {
+      "matchId": "match-22",
+      "groupId": "E",
+      "team1": "guinee-equatoriale",
+      "team2": "soudan",
+      "score1": 2,
+      "score2": 0
+    },
+    {
+      "matchId": "match-23",
+      "groupId": "E",
+      "team1": "algerie",
+      "team2": "burkina-faso",
+      "score1": 2,
+      "score2": 0
+    },
+    {
+      "matchId": "match-33",
+      "groupId": "E",
+      "team1": "guinee-equatoriale",
+      "team2": "algerie",
+      "score1": 0,
+      "score2": 2
+    },
+    {
+      "matchId": "match-34",
+      "groupId": "E",
+      "team1": "soudan",
+      "team2": "burkina-faso",
+      "score1": 0,
+      "score2": 2
+    },
+    {
+      "matchId": "match-11",
+      "groupId": "F",
+      "team1": "cote-d-ivoire",
+      "team2": "mozambique",
+      "score1": 2,
+      "score2": 1
+    },
+    {
+      "matchId": "match-12",
+      "groupId": "F",
+      "team1": "cameroun",
+      "team2": "gabon",
+      "score1": 1,
+      "score2": 3
+    },
+    {
+      "matchId": "match-21",
+      "groupId": "F",
+      "team1": "gabon",
+      "team2": "mozambique",
+      "score1": 1,
+      "score2": 1
+    },
+    {
+      "matchId": "match-24",
+      "groupId": "F",
+      "team1": "cote-d-ivoire",
+      "team2": "cameroun",
+      "score1": 2,
+      "score2": 0
+    },
+    {
+      "matchId": "match-35",
+      "groupId": "F",
+      "team1": "gabon",
+      "team2": "cote-d-ivoire",
+      "score1": 0,
+      "score2": 0
+    },
+    {
+      "matchId": "match-36",
+      "groupId": "F",
+      "team1": "mozambique",
+      "team2": "cameroun",
+      "score1": 0,
+      "score2": 3
+    }
+  ],
+  "groups": [
+    {
+      "id": "A",
+      "name": "Groupe A",
+      "teams": [
+        {
+          "id": "maroc",
+          "name": "Maroc",
+          "flag": "🇲🇦",
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 8,
+          "goalsAgainst": 2,
+          "goalDifference": 6,
+          "points": 9
+        },
+        {
+          "id": "mali",
+          "name": "Mali",
+          "flag": "🇲🇱",
+          "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "goalsFor": 3,
+          "goalsAgainst": 2,
+          "goalDifference": 1,
+          "points": 4
+        },
+        {
+          "id": "comores",
+          "name": "Comores",
+          "flag": "🇰🇲",
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "goalsFor": 3,
+          "goalsAgainst": 6,
+          "goalDifference": -3,
+          "points": 3
+        },
+        {
+          "id": "zambie",
+          "name": "Zambie",
+          "flag": "🇿🇲",
+          "played": 3,
+          "won": 0,
+          "drawn": 1,
+          "lost": 2,
+          "goalsFor": 2,
+          "goalsAgainst": 6,
+          "goalDifference": -4,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Groupe B",
+      "teams": [
+        {
+          "id": "egypte",
+          "name": "Egypte",
+          "flag": "🇪🇬",
+          "played": 3,
+          "won": 2,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 5,
+          "goalsAgainst": 1,
+          "goalDifference": 4,
+          "points": 7
+        },
+        {
+          "id": "afrique-du-sud",
+          "name": "Afrique du Sud",
+          "flag": "🇿🇦",
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 6,
+          "goalsAgainst": 4,
+          "goalDifference": 2,
+          "points": 6
+        },
+        {
+          "id": "angola",
+          "name": "Angola",
+          "flag": "🇦🇴",
+          "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "goalsFor": 4,
+          "goalsAgainst": 3,
+          "goalDifference": 1,
+          "points": 4
+        },
+        {
+          "id": "zimbabwe",
+          "name": "Zimbabwe",
+          "flag": "🇿🇼",
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "goalsFor": 1,
+          "goalsAgainst": 8,
+          "goalDifference": -7,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Groupe C",
+      "teams": [
+        {
+          "id": "tunisie",
+          "name": "Tunisie",
+          "flag": "🇹🇳",
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 8,
+          "goalsAgainst": 2,
+          "goalDifference": 6,
+          "points": 9
+        },
+        {
+          "id": "nigeria",
+          "name": "Nigéria",
+          "flag": "🇳🇬",
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 5,
+          "goalsAgainst": 5,
+          "goalDifference": 0,
+          "points": 6
+        },
+        {
+          "id": "ouganda",
+          "name": "Ouganda",
+          "flag": "🇺🇬",
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "goalsFor": 3,
+          "goalsAgainst": 5,
+          "goalDifference": -2,
+          "points": 3
+        },
+        {
+          "id": "tanzanie",
+          "name": "Tanzanie",
+          "flag": "🇹🇿",
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "goalsFor": 3,
+          "goalsAgainst": 7,
+          "goalDifference": -4,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Groupe D",
+      "teams": [
+        {
+          "id": "senegal",
+          "name": "Sénégal",
+          "flag": "🇸🇳",
+          "played": 3,
+          "won": 1,
+          "drawn": 2,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 2,
+          "goalDifference": 1,
+          "points": 5
+        },
+        {
+          "id": "rd-congo",
+          "name": "RD Congo",
+          "flag": "🇨🇩",
+          "played": 3,
+          "won": 1,
+          "drawn": 2,
+          "lost": 0,
+          "goalsFor": 3,
+          "goalsAgainst": 2,
+          "goalDifference": 1,
+          "points": 5
+        },
+        {
+          "id": "botswana",
+          "name": "Botswana",
+          "flag": "🇧🇼",
+          "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 2,
+          "goalDifference": 0,
+          "points": 4
+        },
+        {
+          "id": "benin",
+          "name": "Bénin",
+          "flag": "🇧🇯",
+          "played": 3,
+          "won": 0,
+          "drawn": 1,
+          "lost": 2,
+          "goalsFor": 1,
+          "goalsAgainst": 3,
+          "goalDifference": -2,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Groupe E",
+      "teams": [
+        {
+          "id": "algerie",
+          "name": "Algérie",
+          "flag": "🇩🇿",
+          "played": 3,
+          "won": 3,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 7,
+          "goalsAgainst": 1,
+          "goalDifference": 6,
+          "points": 9
+        },
+        {
+          "id": "burkina-faso",
+          "name": "Burkina Faso",
+          "flag": "🇧🇫",
+          "played": 3,
+          "won": 2,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 5,
+          "goalsAgainst": 2,
+          "goalDifference": 3,
+          "points": 6
+        },
+        {
+          "id": "guinee-equatoriale",
+          "name": "Guinée Équatoriale",
+          "flag": "🇬🇶",
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "goalsFor": 2,
+          "goalsAgainst": 5,
+          "goalDifference": -3,
+          "points": 3
+        },
+        {
+          "id": "soudan",
+          "name": "Soudan",
+          "flag": "🇸🇩",
+          "played": 3,
+          "won": 0,
+          "drawn": 0,
+          "lost": 3,
+          "goalsFor": 1,
+          "goalsAgainst": 7,
+          "goalDifference": -6,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Groupe F",
+      "teams": [
+        {
+          "id": "cote-d-ivoire",
+          "name": "Côte d'Ivoire",
+          "flag": "🇨🇮",
+          "played": 3,
+          "won": 2,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 1,
+          "goalDifference": 3,
+          "points": 7
+        },
+        {
+          "id": "cameroun",
+          "name": "Cameroun",
+          "flag": "🇨🇲",
+          "played": 3,
+          "won": 1,
+          "drawn": 0,
+          "lost": 2,
+          "goalsFor": 4,
+          "goalsAgainst": 5,
+          "goalDifference": -1,
+          "points": 3
+        },
+        {
+          "id": "gabon",
+          "name": "Gabon",
+          "flag": "🇬🇦",
+          "played": 3,
+          "won": 1,
+          "drawn": 2,
+          "lost": 0,
+          "goalsFor": 4,
+          "goalsAgainst": 2,
+          "goalDifference": 2,
+          "points": 5
+        },
+        {
+          "id": "mozambique",
+          "name": "Mozambique",
+          "flag": "🇲🇿",
+          "played": 3,
+          "won": 0,
+          "drawn": 1,
+          "lost": 2,
+          "goalsFor": 2,
+          "goalsAgainst": 6,
+          "goalDifference": -4,
+          "points": 1
+        }
+      ]
+    }
+  ]
+}

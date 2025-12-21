@@ -6,6 +6,76 @@
   padding-top: 1rem;
 }
 
+/* Styles du header (identique à GroupsView) */
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #c1272d 0%, #a01e23 50%, #006233 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.05) 10px,
+      rgba(255, 255, 255, 0.05) 20px
+    );
+  pointer-events: none;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.title-icon {
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #ffc107;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 .pronostics-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -325,6 +395,209 @@
   font-size: 1.5rem;
   color: white;
   font-weight: 600;
+}
+
+/* Message d'erreur si pas de pronostics */
+.no-pronostics {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.no-pronostics p {
+  color: #ffd700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.no-pronostics code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+}
+
+/* Section des résultats des matchs */
+.matches-results-section {
+  margin-top: 4rem;
+}
+
+.group-matches-container {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #c1272d;
+}
+
+.group-matches-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c1272d;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #006233;
+}
+
+.matches-grid-pronostics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .matches-grid-pronostics {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .group-matches-container {
+    padding: 1.5rem;
+  }
+  
+  .match-result-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .match-result-card {
+    padding: 0.875rem;
+  }
+  
+  .team-name-result {
+    font-size: 0.85rem;
+  }
+  
+  .match-result-date {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .matches-grid-pronostics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .matches-grid-pronostics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.match-result-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.match-result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: #c1272d;
+}
+
+.match-result-date {
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.match-result-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.match-result-team {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.match-result-team.winner {
+  background: rgba(193, 39, 45, 0.1);
+  font-weight: 700;
+}
+
+.match-result-team:first-child {
+  justify-content: flex-start;
+}
+
+.match-result-team:last-child {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.team-flag-result {
+  font-size: 1.5rem;
+}
+
+.team-name-result {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.match-result-team.winner .team-name-result {
+  color: #c1272d;
+}
+
+.team-score-result {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2c3e50;
+  min-width: 24px;
+  text-align: center;
+}
+
+.match-result-team.winner .team-score-result {
+  color: #c1272d;
+  font-size: 1.5rem;
+}
+
+.match-result-separator {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6c757d;
+  padding: 0 0.5rem;
+}
+
+.match-result-draw {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #006233;
+  font-weight: 600;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {

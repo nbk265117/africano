@@ -34,9 +34,30 @@ npm run preview
 
 - `src/data/groups.ts` - Données des groupes et équipes
 - `src/data/matches.ts` - Données des matchs (36 matchs programmés)
+- `src/data/qualifications.ts` - Équipes qualifiées par groupe
+- `src/data/pronostics.json` - Pronostics générés (résultats simulés des matchs)
+- `src/data/pronostics.ts` - Types et chargement des pronostics
+- `scripts/generate-pronostics.js` - Script pour générer les pronostics
 - `src/components/` - Composants React
 - `src/pages/` - Pages Astro
 - `src/layouts/` - Layouts Astro
+
+## 🎲 Génération des Pronostics
+
+Les pronostics sont calculés **une seule fois** et sauvegardés dans `src/data/pronostics.json`.
+
+Pour générer les pronostics :
+
+```bash
+npm run generate-pronostics
+```
+
+Ce script :
+- Simule tous les matchs de groupes en tenant compte des équipes qualifiées
+- Calcule les classements finaux de chaque groupe
+- Sauvegarde les résultats dans `src/data/pronostics.json`
+
+**Note** : Les pronostics sont générés une seule fois et utilisés par l'application. Pour régénérer avec de nouveaux résultats aléatoires, relancez le script.
 
 ## 🎨 Style
 
@@ -72,6 +93,8 @@ git push -u origin main
 - ✅ Filtrage par groupe
 - ✅ Organisation des matchs par date
 - ✅ Design responsive et style africain/marocain
+- ✅ Page PRO avec pronostics simulés basés sur les équipes qualifiées
+- ✅ Pronostics sauvegardés dans un fichier JSON (générés une seule fois)
 
 ## 🏆 Matchs
 
