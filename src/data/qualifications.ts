@@ -1,5 +1,5 @@
 // Classements finaux des groupes selon les pronostics
-export type QualifiedTeam = {
+export interface QualifiedTeam {
   teamId: string;
   teamName: string;
   position: number; // 1, 2, ou 3 (meilleur 3ème)
