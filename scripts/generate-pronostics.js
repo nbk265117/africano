@@ -732,6 +732,658 @@ const generatePronostics = () => {
       }
     });
     
+    // Recalculer TOUTES les stats des équipes AVANT de vérifier les non qualifiées
+    group.teams.forEach(team => {
+      team.points = 0;
+      team.won = 0;
+      team.drawn = 0;
+      team.lost = 0;
+      team.goalsFor = 0;
+      team.goalsAgainst = 0;
+      
+      const teamMatches = groupMatches.filter(m => m.team1 === team.id || m.team2 === team.id);
+      teamMatches.forEach(m => {
+        const isT1 = m.team1 === team.id;
+        const score1 = isT1 ? m.score1 : m.score2;
+        const score2 = isT1 ? m.score2 : m.score1;
+        
+        team.goalsFor += score1;
+        team.goalsAgainst += score2;
+        
+        if (score1 > score2) {
+          team.won++;
+          team.points += 3;
+        } else if (score1 === score2) {
+          team.drawn++;
+          team.points += 1;
+        } else {
+          team.lost++;
+        }
+      });
+      
+      team.goalDifference = team.goalsFor - team.goalsAgainst;
+      team.played = 3;
+    });
+    
+    // Garantir que les équipes NON qualifiées ont strictement moins de points que les qualifiées
+    const qualifiedTeamIds = new Set(groupQualified.map(q => q.teamId));
+    const minQualifiedPoints = Math.min(...groupQualified.map(q => q.targetPoints || 0));
+    
+    group.teams.forEach(team => {
+      if (!qualifiedTeamIds.has(team.id)) {
+        // Équipe non qualifiée doit avoir strictement moins de points que la moins bonne équipe qualifiée
+        if (team.points >= minQualifiedPoints) {
+          // Ajuster les matchs pour réduire les points
+          const teamMatches = groupMatches.filter(m => m.team1 === team.id || m.team2 === team.id);
+          const maxAllowedPoints = minQualifiedPoints - 1;
+          
+          // Réduire les points en changeant des victoires en défaites ou nuls en défaites
+          while (team.points > maxAllowedPoints && teamMatches.length > 0) {
+            // Trouver un match où l'équipe a gagné ou fait match nul
+            const winMatch = teamMatches.find(m => {
+              const isT1 = m.team1 === team.id;
+              const score1 = isT1 ? m.score1 : m.score2;
+              const score2 = isT1 ? m.score2 : m.score1;
+              return score1 >= score2; // Victoire ou nul
+            });
+            
+            if (winMatch) {
+              const isTeam1 = winMatch.team1 === team.id;
+              const currentScore1 = winMatch.score1;
+              const currentScore2 = winMatch.score2;
+              const isWin = isTeam1 ? currentScore1 > currentScore2 : currentScore2 > currentScore1;
+              const isDraw = currentScore1 === currentScore2;
+              
+              // Changer la victoire ou le nul en défaite
+              if (isTeam1) {
+                winMatch.score1 = Math.floor(Math.random() * 2);
+                winMatch.score2 = Math.floor(Math.random() * 2) + 2;
+              } else {
+                winMatch.score2 = Math.floor(Math.random() * 2);
+                winMatch.score1 = Math.floor(Math.random() * 2) + 2;
+              }
+              
+              // Recalculer les stats de l'équipe
+              team.points = 0;
+              team.won = 0;
+              team.drawn = 0;
+              team.lost = 0;
+              team.goalsFor = 0;
+              team.goalsAgainst = 0;
+              
+              teamMatches.forEach(m => {
+                const isT1 = m.team1 === team.id;
+                const score1 = isT1 ? m.score1 : m.score2;
+                const score2 = isT1 ? m.score2 : m.score1;
+                
+                team.goalsFor += score1;
+                team.goalsAgainst += score2;
+                
+                if (score1 > score2) {
+                  team.won++;
+                  team.points += 3;
+                } else if (score1 === score2) {
+                  team.drawn++;
+                  team.points += 1;
+                } else {
+                  team.lost++;
+                }
+              });
+              
+              team.goalDifference = team.goalsFor - team.goalsAgainst;
+              team.played = 3;
+              
+              // Ajuster aussi l'autre équipe
+              const otherTeamId = isTeam1 ? winMatch.team2 : winMatch.team1;
+              const otherTeam = group.teams.find(t => t.id === otherTeamId);
+              if (otherTeam && !qualifiedTeamIds.has(otherTeamId)) {
+                // Recalculer pour l'autre équipe aussi
+                const otherTeamMatches = groupMatches.filter(m => m.team1 === otherTeamId || m.team2 === otherTeamId);
+                otherTeam.points = 0;
+                otherTeam.won = 0;
+                otherTeam.drawn = 0;
+                otherTeam.lost = 0;
+                otherTeam.goalsFor = 0;
+                otherTeam.goalsAgainst = 0;
+                
+                otherTeamMatches.forEach(m => {
+                  const isT1 = m.team1 === otherTeamId;
+                  const score1 = isT1 ? m.score1 : m.score2;
+                  const score2 = isT1 ? m.score2 : m.score1;
+                  
+                  otherTeam.goalsFor += score1;
+                  otherTeam.goalsAgainst += score2;
+                  
+                  if (score1 > score2) {
+                    otherTeam.won++;
+                    otherTeam.points += 3;
+                  } else if (score1 === score2) {
+                    otherTeam.drawn++;
+                    otherTeam.points += 1;
+                  } else {
+                    otherTeam.lost++;
+                  }
+                });
+                
+                otherTeam.goalDifference = otherTeam.goalsFor - otherTeam.goalsAgainst;
+                otherTeam.played = 3;
+              }
+            } else {
+              // Plus de victoires/nuls à changer, essayer de changer un nul en défaite
+              const drawMatch = teamMatches.find(m => {
+                const isT1 = m.team1 === team.id;
+                return m.score1 === m.score2; // Match nul
+              });
+              
+              if (drawMatch) {
+                const isTeam1 = drawMatch.team1 === team.id;
+                // Changer le nul en défaite
+                if (isTeam1) {
+                  drawMatch.score1 = Math.floor(Math.random() * 2);
+                  drawMatch.score2 = Math.floor(Math.random() * 2) + 2;
+                } else {
+                  drawMatch.score2 = Math.floor(Math.random() * 2);
+                  drawMatch.score1 = Math.floor(Math.random() * 2) + 2;
+                }
+                
+                // Recalculer les stats
+                team.points = 0;
+                team.won = 0;
+                team.drawn = 0;
+                team.lost = 0;
+                team.goalsFor = 0;
+                team.goalsAgainst = 0;
+                
+                teamMatches.forEach(m => {
+                  const isT1 = m.team1 === team.id;
+                  const score1 = isT1 ? m.score1 : m.score2;
+                  const score2 = isT1 ? m.score2 : m.score1;
+                  
+                  team.goalsFor += score1;
+                  team.goalsAgainst += score2;
+                  
+                  if (score1 > score2) {
+                    team.won++;
+                    team.points += 3;
+                  } else if (score1 === score2) {
+                    team.drawn++;
+                    team.points += 1;
+                  } else {
+                    team.lost++;
+                  }
+                });
+                
+                team.goalDifference = team.goalsFor - team.goalsAgainst;
+                team.played = 3;
+                
+                // Ajuster aussi l'autre équipe
+                const otherTeamId = isTeam1 ? drawMatch.team2 : drawMatch.team1;
+                const otherTeam = group.teams.find(t => t.id === otherTeamId);
+                if (otherTeam && !qualifiedTeamIds.has(otherTeamId)) {
+                  const otherTeamMatches = groupMatches.filter(m => m.team1 === otherTeamId || m.team2 === otherTeamId);
+                  otherTeam.points = 0;
+                  otherTeam.won = 0;
+                  otherTeam.drawn = 0;
+                  otherTeam.lost = 0;
+                  otherTeam.goalsFor = 0;
+                  otherTeam.goalsAgainst = 0;
+                  
+                  otherTeamMatches.forEach(m => {
+                    const isT1 = m.team1 === otherTeamId;
+                    const score1 = isT1 ? m.score1 : m.score2;
+                    const score2 = isT1 ? m.score2 : m.score1;
+                    
+                    otherTeam.goalsFor += score1;
+                    otherTeam.goalsAgainst += score2;
+                    
+                    if (score1 > score2) {
+                      otherTeam.won++;
+                      otherTeam.points += 3;
+                    } else if (score1 === score2) {
+                      otherTeam.drawn++;
+                      otherTeam.points += 1;
+                    } else {
+                      otherTeam.lost++;
+                    }
+                  });
+                  
+                  otherTeam.goalDifference = otherTeam.goalsFor - otherTeam.goalsAgainst;
+                  otherTeam.played = 3;
+                }
+              } else {
+                break; // Plus de matchs à modifier
+              }
+            }
+          }
+          
+          // Si toujours trop de points (ou égal), réduire encore de manière agressive
+          let attempts = 0;
+          while (team.points >= minQualifiedPoints && attempts < 10) {
+            attempts++;
+            const teamMatches = groupMatches.filter(m => m.team1 === team.id || m.team2 === team.id);
+            
+            // Trouver un match à modifier (victoire ou nul)
+            // Prioriser les matchs contre des équipes non qualifiées pour éviter d'affecter les qualifiées
+            let matchToModify = teamMatches.find(match => {
+              const otherTeamId = match.team1 === team.id ? match.team2 : match.team1;
+              if (qualifiedTeamIds.has(otherTeamId)) return false; // Éviter les équipes qualifiées
+              
+              const isTeam1 = match.team1 === team.id;
+              const score1 = isTeam1 ? match.score1 : match.score2;
+              const score2 = isTeam1 ? match.score2 : match.score1;
+              return score1 >= score2; // Victoire ou nul
+            });
+            
+            // Si pas de match contre non qualifié, prendre n'importe quel match
+            if (!matchToModify) {
+              matchToModify = teamMatches.find(match => {
+                const isTeam1 = match.team1 === team.id;
+                const score1 = isTeam1 ? match.score1 : match.score2;
+                const score2 = isTeam1 ? match.score2 : match.score1;
+                return score1 >= score2; // Victoire ou nul
+              });
+            }
+            
+            if (matchToModify) {
+              const isTeam1 = matchToModify.team1 === team.id;
+              
+              // Changer en défaite
+              if (isTeam1) {
+                matchToModify.score1 = Math.floor(Math.random() * 2);
+                matchToModify.score2 = Math.floor(Math.random() * 2) + 2;
+              } else {
+                matchToModify.score2 = Math.floor(Math.random() * 2);
+                matchToModify.score1 = Math.floor(Math.random() * 2) + 2;
+              }
+              
+              // Recalculer toutes les stats de l'équipe
+              team.points = 0;
+              team.won = 0;
+              team.drawn = 0;
+              team.lost = 0;
+              team.goalsFor = 0;
+              team.goalsAgainst = 0;
+              
+              teamMatches.forEach(m => {
+                const isT1 = m.team1 === team.id;
+                const score1 = isT1 ? m.score1 : m.score2;
+                const score2 = isT1 ? m.score2 : m.score1;
+                
+                team.goalsFor += score1;
+                team.goalsAgainst += score2;
+                
+                if (score1 > score2) {
+                  team.won++;
+                  team.points += 3;
+                } else if (score1 === score2) {
+                  team.drawn++;
+                  team.points += 1;
+                } else {
+                  team.lost++;
+                }
+              });
+              
+              team.goalDifference = team.goalsFor - team.goalsAgainst;
+              team.played = 3;
+              
+              // Ajuster aussi l'autre équipe du match modifié
+              const otherTeamId = isTeam1 ? matchToModify.team2 : matchToModify.team1;
+              const otherTeam = group.teams.find(t => t.id === otherTeamId);
+              if (otherTeam) {
+                if (qualifiedTeamIds.has(otherTeamId)) {
+                  // Si l'autre équipe est qualifiée, réajuster ses points après modification
+                  const qualifiedData = groupQualified.find(q => q.teamId === otherTeamId);
+                  if (qualifiedData && qualifiedData.targetPoints !== undefined) {
+                    // Recalculer les stats de l'équipe qualifiée
+                    const otherTeamMatches = groupMatches.filter(m => m.team1 === otherTeamId || m.team2 === otherTeamId);
+                    otherTeam.points = 0;
+                    otherTeam.won = 0;
+                    otherTeam.drawn = 0;
+                    otherTeam.lost = 0;
+                    otherTeam.goalsFor = 0;
+                    otherTeam.goalsAgainst = 0;
+                    
+                    otherTeamMatches.forEach(m => {
+                      const isT1 = m.team1 === otherTeamId;
+                      const score1 = isT1 ? m.score1 : m.score2;
+                      const score2 = isT1 ? m.score2 : m.score1;
+                      
+                      otherTeam.goalsFor += score1;
+                      otherTeam.goalsAgainst += score2;
+                      
+                      if (score1 > score2) {
+                        otherTeam.won++;
+                        otherTeam.points += 3;
+                      } else if (score1 === score2) {
+                        otherTeam.drawn++;
+                        otherTeam.points += 1;
+                      } else {
+                        otherTeam.lost++;
+                      }
+                    });
+                    
+                    otherTeam.goalDifference = otherTeam.goalsFor - otherTeam.goalsAgainst;
+                    otherTeam.played = 3;
+                    
+                    // Réajuster les matchs de l'équipe qualifiée pour atteindre les points cibles
+                    if (otherTeam.points !== qualifiedData.targetPoints) {
+                      const neededPoints = qualifiedData.targetPoints - otherTeam.points;
+                      const adjustMatches = otherTeamMatches.filter(m => {
+                        const opponentId = m.team1 === otherTeamId ? m.team2 : m.team1;
+                        return !qualifiedTeamIds.has(opponentId); // Ne modifier que les matchs contre non qualifiées
+                      });
+                      
+                      for (const adjMatch of adjustMatches) {
+                        if (otherTeam.points === qualifiedData.targetPoints) break;
+                        
+                        const isOtherTeam1 = adjMatch.team1 === otherTeamId;
+                        const currentScore1 = adjMatch.score1;
+                        const currentScore2 = adjMatch.score2;
+                        const currentResult = isOtherTeam1 ?
+                          (currentScore1 > currentScore2 ? 'win' : currentScore1 === currentScore2 ? 'draw' : 'loss') :
+                          (currentScore2 > currentScore1 ? 'win' : currentScore2 === currentScore1 ? 'draw' : 'loss');
+                        
+                        const pointsNeeded = qualifiedData.targetPoints - otherTeam.points;
+                        
+                        if (pointsNeeded >= 3 && currentResult !== 'win') {
+                          // Besoin d'une victoire
+                          if (isOtherTeam1) {
+                            adjMatch.score1 = Math.floor(Math.random() * 2) + 2;
+                            adjMatch.score2 = Math.floor(Math.random() * 2);
+                          } else {
+                            adjMatch.score2 = Math.floor(Math.random() * 2) + 2;
+                            adjMatch.score1 = Math.floor(Math.random() * 2);
+                          }
+                        } else if (pointsNeeded === 1 && currentResult === 'loss') {
+                          // Besoin d'un nul
+                          const drawScore = Math.floor(Math.random() * 2);
+                          adjMatch.score1 = drawScore;
+                          adjMatch.score2 = drawScore;
+                        } else if (pointsNeeded <= -3 && currentResult === 'win') {
+                          // Changer une victoire en défaite
+                          if (isOtherTeam1) {
+                            adjMatch.score1 = Math.floor(Math.random() * 2);
+                            adjMatch.score2 = Math.floor(Math.random() * 2) + 2;
+                          } else {
+                            adjMatch.score2 = Math.floor(Math.random() * 2);
+                            adjMatch.score1 = Math.floor(Math.random() * 2) + 2;
+                          }
+                        }
+                        
+                        // Recalculer
+                        otherTeam.points = 0;
+                        otherTeam.won = 0;
+                        otherTeam.drawn = 0;
+                        otherTeam.lost = 0;
+                        otherTeam.goalsFor = 0;
+                        otherTeam.goalsAgainst = 0;
+                        
+                        otherTeamMatches.forEach(m => {
+                          const isT1 = m.team1 === otherTeamId;
+                          const score1 = isT1 ? m.score1 : m.score2;
+                          const score2 = isT1 ? m.score2 : m.score1;
+                          
+                          otherTeam.goalsFor += score1;
+                          otherTeam.goalsAgainst += score2;
+                          
+                          if (score1 > score2) {
+                            otherTeam.won++;
+                            otherTeam.points += 3;
+                          } else if (score1 === score2) {
+                            otherTeam.drawn++;
+                            otherTeam.points += 1;
+                          } else {
+                            otherTeam.lost++;
+                          }
+                        });
+                        
+                        otherTeam.goalDifference = otherTeam.goalsFor - otherTeam.goalsAgainst;
+                        otherTeam.played = 3;
+                      }
+                      
+                      // Forcer les points exacts
+                      otherTeam.points = qualifiedData.targetPoints;
+                    }
+                  }
+                } else {
+                  // Équipe non qualifiée, recalculer normalement
+                  const otherTeamMatches = groupMatches.filter(m => m.team1 === otherTeamId || m.team2 === otherTeamId);
+                  otherTeam.points = 0;
+                  otherTeam.won = 0;
+                  otherTeam.drawn = 0;
+                  otherTeam.lost = 0;
+                  otherTeam.goalsFor = 0;
+                  otherTeam.goalsAgainst = 0;
+                  
+                  otherTeamMatches.forEach(m => {
+                    const isT1 = m.team1 === otherTeamId;
+                    const score1 = isT1 ? m.score1 : m.score2;
+                    const score2 = isT1 ? m.score2 : m.score1;
+                    
+                    otherTeam.goalsFor += score1;
+                    otherTeam.goalsAgainst += score2;
+                    
+                    if (score1 > score2) {
+                      otherTeam.won++;
+                      otherTeam.points += 3;
+                    } else if (score1 === score2) {
+                      otherTeam.drawn++;
+                      otherTeam.points += 1;
+                    } else {
+                      otherTeam.lost++;
+                    }
+                  });
+                  
+                  otherTeam.goalDifference = otherTeam.goalsFor - otherTeam.goalsAgainst;
+                  otherTeam.played = 3;
+                }
+              }
+            } else {
+              break; // Plus de matchs à modifier
+            }
+          }
+          
+          // Dernière vérification : forcer le maximum autorisé si toujours trop
+          if (team.points >= minQualifiedPoints) {
+            // Réduire tous les matchs restants en défaites (sauf ceux contre équipes qualifiées si nécessaire)
+            const teamMatches = groupMatches.filter(m => m.team1 === team.id || m.team2 === team.id);
+            
+            // D'abord, modifier les matchs contre équipes non qualifiées
+            teamMatches.forEach(match => {
+              const otherTeamId = match.team1 === team.id ? match.team2 : match.team1;
+              if (qualifiedTeamIds.has(otherTeamId)) return; // Sauter les équipes qualifiées pour l'instant
+              
+              const isTeam1 = match.team1 === team.id;
+              const score1 = isTeam1 ? match.score1 : match.score2;
+              const score2 = isTeam1 ? match.score2 : match.score1;
+              
+              if (score1 > score2) {
+                // Victoire -> changer en nul pour réduire les points
+                const drawScore = Math.floor(Math.random() * 2);
+                if (isTeam1) {
+                  match.score1 = drawScore;
+                  match.score2 = drawScore;
+                } else {
+                  match.score2 = drawScore;
+                  match.score1 = drawScore;
+                }
+              } else if (score1 === score2) {
+                // Nul -> changer en défaite
+                if (isTeam1) {
+                  match.score1 = 0;
+                  match.score2 = 2;
+                } else {
+                  match.score2 = 0;
+                  match.score1 = 2;
+                }
+              }
+            });
+            
+            // Recalculer
+            team.points = 0;
+            team.won = 0;
+            team.drawn = 0;
+            team.lost = 0;
+            team.goalsFor = 0;
+            team.goalsAgainst = 0;
+            
+            const teamMatchesFinal = groupMatches.filter(m => m.team1 === team.id || m.team2 === team.id);
+            teamMatchesFinal.forEach(m => {
+              const isT1 = m.team1 === team.id;
+              const score1 = isT1 ? m.score1 : m.score2;
+              const score2 = isT1 ? m.score2 : m.score1;
+              
+              team.goalsFor += score1;
+              team.goalsAgainst += score2;
+              
+              if (score1 > score2) {
+                team.won++;
+                team.points += 3;
+              } else if (score1 === score2) {
+                team.drawn++;
+                team.points += 1;
+              } else {
+                team.lost++;
+              }
+            });
+            
+            team.goalDifference = team.goalsFor - team.goalsAgainst;
+            team.played = 3;
+            
+            // Si toujours trop de points, modifier aussi les matchs contre équipes qualifiées
+            if (team.points >= minQualifiedPoints) {
+              teamMatches.forEach(match => {
+                if (team.points < minQualifiedPoints) return;
+                
+                const otherTeamId = match.team1 === team.id ? match.team2 : match.team1;
+                const isTeam1 = match.team1 === team.id;
+                const score1 = isTeam1 ? match.score1 : match.score2;
+                const score2 = isTeam1 ? match.score2 : match.score1;
+                
+                if (score1 >= score2) {
+                  // Changer en défaite
+                  if (isTeam1) {
+                    match.score1 = 0;
+                    match.score2 = 2;
+                  } else {
+                    match.score2 = 0;
+                    match.score1 = 2;
+                  }
+                  
+                  // Recalculer immédiatement
+                  team.points = 0;
+                  team.won = 0;
+                  team.drawn = 0;
+                  team.lost = 0;
+                  team.goalsFor = 0;
+                  team.goalsAgainst = 0;
+                  
+                  teamMatchesFinal.forEach(m => {
+                    const isT1 = m.team1 === team.id;
+                    const s1 = isT1 ? m.score1 : m.score2;
+                    const s2 = isT1 ? m.score2 : m.score1;
+                    
+                    team.goalsFor += s1;
+                    team.goalsAgainst += s2;
+                    
+                    if (s1 > s2) {
+                      team.won++;
+                      team.points += 3;
+                    } else if (s1 === s2) {
+                      team.drawn++;
+                      team.points += 1;
+                    } else {
+                      team.lost++;
+                    }
+                  });
+                  
+                  team.goalDifference = team.goalsFor - team.goalsAgainst;
+                  team.played = 3;
+                  
+                  // Réajuster l'équipe qualifiée si nécessaire
+                  if (qualifiedTeamIds.has(otherTeamId)) {
+                    const qualifiedData = groupQualified.find(q => q.teamId === otherTeamId);
+                    if (qualifiedData && qualifiedData.targetPoints !== undefined) {
+                      const otherTeam = group.teams.find(t => t.id === otherTeamId);
+                      const otherTeamMatches = groupMatches.filter(m => m.team1 === otherTeamId || m.team2 === otherTeamId);
+                      
+                      // Ajuster un match contre une équipe non qualifiée pour compenser
+                      const adjustMatch = otherTeamMatches.find(m => {
+                        const oppId = m.team1 === otherTeamId ? m.team2 : m.team1;
+                        return !qualifiedTeamIds.has(oppId) && oppId !== team.id;
+                      });
+                      
+                      if (adjustMatch) {
+                        const isOtherTeam1 = adjustMatch.team1 === otherTeamId;
+                        if (isOtherTeam1) {
+                          adjustMatch.score1 = Math.floor(Math.random() * 2) + 2;
+                          adjustMatch.score2 = Math.floor(Math.random() * 2);
+                        } else {
+                          adjustMatch.score2 = Math.floor(Math.random() * 2) + 2;
+                          adjustMatch.score1 = Math.floor(Math.random() * 2);
+                        }
+                      }
+                      
+                      // Recalculer l'équipe qualifiée
+                      otherTeam.points = 0;
+                      otherTeam.won = 0;
+                      otherTeam.drawn = 0;
+                      otherTeam.lost = 0;
+                      otherTeam.goalsFor = 0;
+                      otherTeam.goalsAgainst = 0;
+                      
+                      otherTeamMatches.forEach(m => {
+                        const isT1 = m.team1 === otherTeamId;
+                        const s1 = isT1 ? m.score1 : m.score2;
+                        const s2 = isT1 ? m.score2 : m.score1;
+                        
+                        otherTeam.goalsFor += s1;
+                        otherTeam.goalsAgainst += s2;
+                        
+                        if (s1 > s2) {
+                          otherTeam.won++;
+                          otherTeam.points += 3;
+                        } else if (s1 === s2) {
+                          otherTeam.drawn++;
+                          otherTeam.points += 1;
+                        } else {
+                          otherTeam.lost++;
+                        }
+                      });
+                      
+                      otherTeam.goalDifference = otherTeam.goalsFor - otherTeam.goalsAgainst;
+                      otherTeam.played = 3;
+                      
+                      // Forcer les points exacts
+                      otherTeam.points = qualifiedData.targetPoints;
+                    }
+                  }
+                }
+              });
+            }
+          }
+        }
+      }
+    });
+    
+    // Trier les équipes pour garantir l'ordre des qualifications
+    group.teams.sort((a, b) => {
+      const aQualified = groupQualified.find(q => q.teamId === a.id);
+      const bQualified = groupQualified.find(q => q.teamId === b.id);
+      
+      // Les équipes qualifiées d'abord selon leur position
+      if (aQualified && bQualified) {
+        return aQualified.position - bQualified.position;
+      }
+      if (aQualified && !bQualified) return -1;
+      if (!aQualified && bQualified) return 1;
+      
+      // Ensuite par points pour les non qualifiées
+      if (b.points !== a.points) return b.points - a.points;
+      if (b.goalDifference !== a.goalDifference) return b.goalDifference - a.goalDifference;
+      return b.goalsFor - a.goalsFor;
+    });
+    
     // Créer un mapping des positions souhaitées
     const positionMap = {};
     groupQualified.forEach(q => {

@@ -5,23 +5,23 @@
       "groupId": "A",
       "team1": "comores",
       "team2": "maroc",
-      "score1": 0,
-      "score2": 3
+      "score1": 1,
+      "score2": 2
     },
     {
       "matchId": "match-2",
       "groupId": "A",
       "team1": "mali",
       "team2": "zambie",
-      "score1": 0,
-      "score2": 0
+      "score1": 1,
+      "score2": 1
     },
     {
       "matchId": "match-15",
       "groupId": "A",
       "team1": "zambie",
       "team2": "comores",
-      "score1": 1,
+      "score1": 0,
       "score2": 3
     },
     {
@@ -30,14 +30,14 @@
       "team1": "maroc",
       "team2": "mali",
       "score1": 2,
-      "score2": 1
+      "score2": 0
     },
     {
       "matchId": "match-27",
       "groupId": "A",
       "team1": "comores",
       "team2": "mali",
-      "score1": 0,
+      "score1": 1,
       "score2": 2
     },
     {
@@ -45,7 +45,7 @@
       "groupId": "A",
       "team1": "zambie",
       "team2": "maroc",
-      "score1": 1,
+      "score1": 0,
       "score2": 3
     },
     {
@@ -61,7 +61,7 @@
       "groupId": "B",
       "team1": "egypte",
       "team2": "zimbabwe",
-      "score1": 3,
+      "score1": 2,
       "score2": 0
     },
     {
@@ -78,7 +78,7 @@
       "team1": "egypte",
       "team2": "afrique-du-sud",
       "score1": 2,
-      "score2": 1
+      "score2": 0
     },
     {
       "matchId": "match-25",
@@ -93,7 +93,7 @@
       "groupId": "B",
       "team1": "zimbabwe",
       "team2": "afrique-du-sud",
-      "score1": 1,
+      "score1": 0,
       "score2": 2
     },
     {
@@ -101,8 +101,8 @@
       "groupId": "C",
       "team1": "nigeria",
       "team2": "tanzanie",
-      "score1": 2,
-      "score2": 1
+      "score1": 3,
+      "score2": 0
     },
     {
       "matchId": "match-6",
@@ -110,7 +110,7 @@
       "team1": "tunisie",
       "team2": "ouganda",
       "score1": 2,
-      "score2": 0
+      "score2": 1
     },
     {
       "matchId": "match-19",
@@ -118,22 +118,22 @@
       "team1": "ouganda",
       "team2": "tanzanie",
       "score1": 2,
-      "score2": 1
+      "score2": 0
     },
     {
       "matchId": "match-20",
       "groupId": "C",
       "team1": "nigeria",
       "team2": "tunisie",
-      "score1": 1,
-      "score2": 3
+      "score1": 0,
+      "score2": 2
     },
     {
       "matchId": "match-29",
       "groupId": "C",
       "team1": "ouganda",
       "team2": "nigeria",
-      "score1": 1,
+      "score1": 0,
       "score2": 2
     },
     {
@@ -149,7 +149,7 @@
       "groupId": "D",
       "team1": "rd-congo",
       "team2": "benin",
-      "score1": 2,
+      "score1": 3,
       "score2": 1
     },
     {
@@ -158,14 +158,14 @@
       "team1": "botswana",
       "team2": "senegal",
       "score1": 1,
-      "score2": 2
+      "score2": 3
     },
     {
       "matchId": "match-17",
       "groupId": "D",
       "team1": "benin",
       "team2": "botswana",
-      "score1": 0,
+      "score1": 2,
       "score2": 1
     },
     {
@@ -198,7 +198,7 @@
       "team1": "burkina-faso",
       "team2": "guinee-equatoriale",
       "score1": 3,
-      "score2": 0
+      "score2": 1
     },
     {
       "matchId": "match-10",
@@ -214,7 +214,7 @@
       "team1": "guinee-equatoriale",
       "team2": "soudan",
       "score1": 2,
-      "score2": 0
+      "score2": 1
     },
     {
       "matchId": "match-23",
@@ -222,7 +222,7 @@
       "team1": "algerie",
       "team2": "burkina-faso",
       "score1": 2,
-      "score2": 0
+      "score2": 1
     },
     {
       "matchId": "match-33",
@@ -230,7 +230,7 @@
       "team1": "guinee-equatoriale",
       "team2": "algerie",
       "score1": 0,
-      "score2": 2
+      "score2": 3
     },
     {
       "matchId": "match-34",
@@ -245,16 +245,16 @@
       "groupId": "F",
       "team1": "cote-d-ivoire",
       "team2": "mozambique",
-      "score1": 2,
-      "score2": 1
+      "score1": 3,
+      "score2": 0
     },
     {
       "matchId": "match-12",
       "groupId": "F",
       "team1": "cameroun",
       "team2": "gabon",
-      "score1": 1,
-      "score2": 3
+      "score1": 3,
+      "score2": 1
     },
     {
       "matchId": "match-21",
@@ -269,8 +269,8 @@
       "groupId": "F",
       "team1": "cote-d-ivoire",
       "team2": "cameroun",
-      "score1": 2,
-      "score2": 0
+      "score1": 3,
+      "score2": 1
     },
     {
       "matchId": "match-35",
@@ -285,8 +285,8 @@
       "groupId": "F",
       "team1": "mozambique",
       "team2": "cameroun",
-      "score1": 0,
-      "score2": 3
+      "score1": 1,
+      "score2": 2
     }
   ],
   "groups": [
@@ -302,8 +302,8 @@
           "won": 3,
           "drawn": 0,
           "lost": 0,
-          "goalsFor": 8,
-          "goalsAgainst": 2,
+          "goalsFor": 7,
+          "goalsAgainst": 1,
           "goalDifference": 6,
           "points": 9
         },
@@ -316,8 +316,8 @@
           "drawn": 1,
           "lost": 1,
           "goalsFor": 3,
-          "goalsAgainst": 2,
-          "goalDifference": 1,
+          "goalsAgainst": 4,
+          "goalDifference": -1,
           "points": 4
         },
         {
@@ -328,9 +328,9 @@
           "won": 1,
           "drawn": 0,
           "lost": 2,
-          "goalsFor": 3,
-          "goalsAgainst": 6,
-          "goalDifference": -3,
+          "goalsFor": 5,
+          "goalsAgainst": 4,
+          "goalDifference": 1,
           "points": 3
         },
         {
@@ -341,9 +341,9 @@
           "won": 0,
           "drawn": 1,
           "lost": 2,
-          "goalsFor": 2,
-          "goalsAgainst": 6,
-          "goalDifference": -4,
+          "goalsFor": 1,
+          "goalsAgainst": 7,
+          "goalDifference": -6,
           "points": 1
         }
       ]
@@ -360,8 +360,8 @@
           "won": 2,
           "drawn": 1,
           "lost": 0,
-          "goalsFor": 5,
-          "goalsAgainst": 1,
+          "goalsFor": 4,
+          "goalsAgainst": 0,
           "goalDifference": 4,
           "points": 7
         },
@@ -373,8 +373,8 @@
           "won": 2,
           "drawn": 0,
           "lost": 1,
-          "goalsFor": 6,
-          "goalsAgainst": 4,
+          "goalsFor": 5,
+          "goalsAgainst": 3,
           "goalDifference": 2,
           "points": 6
         },
@@ -399,8 +399,8 @@
           "won": 0,
           "drawn": 0,
           "lost": 3,
-          "goalsFor": 1,
-          "goalsAgainst": 8,
+          "goalsFor": 0,
+          "goalsAgainst": 7,
           "goalDifference": -7,
           "points": 0
         }
@@ -418,9 +418,9 @@
           "won": 3,
           "drawn": 0,
           "lost": 0,
-          "goalsFor": 8,
+          "goalsFor": 7,
           "goalsAgainst": 2,
-          "goalDifference": 6,
+          "goalDifference": 5,
           "points": 9
         },
         {
@@ -432,8 +432,8 @@
           "drawn": 0,
           "lost": 1,
           "goalsFor": 5,
-          "goalsAgainst": 5,
-          "goalDifference": 0,
+          "goalsAgainst": 2,
+          "goalDifference": 3,
           "points": 6
         },
         {
@@ -445,8 +445,8 @@
           "drawn": 0,
           "lost": 2,
           "goalsFor": 3,
-          "goalsAgainst": 5,
-          "goalDifference": -2,
+          "goalsAgainst": 4,
+          "goalDifference": -1,
           "points": 3
         },
         {
@@ -457,9 +457,9 @@
           "won": 0,
           "drawn": 0,
           "lost": 3,
-          "goalsFor": 3,
-          "goalsAgainst": 7,
-          "goalDifference": -4,
+          "goalsFor": 1,
+          "goalsAgainst": 8,
+          "goalDifference": -7,
           "points": 0
         }
       ]
@@ -476,9 +476,9 @@
           "won": 1,
           "drawn": 2,
           "lost": 0,
-          "goalsFor": 3,
+          "goalsFor": 4,
           "goalsAgainst": 2,
-          "goalDifference": 1,
+          "goalDifference": 2,
           "points": 5
         },
         {
@@ -489,35 +489,35 @@
           "won": 1,
           "drawn": 2,
           "lost": 0,
-          "goalsFor": 3,
+          "goalsFor": 4,
           "goalsAgainst": 2,
-          "goalDifference": 1,
+          "goalDifference": 2,
           "points": 5
-        },
-        {
-          "id": "botswana",
-          "name": "Botswana",
-          "flag": "🇧🇼",
-          "played": 3,
-          "won": 1,
-          "drawn": 1,
-          "lost": 1,
-          "goalsFor": 2,
-          "goalsAgainst": 2,
-          "goalDifference": 0,
-          "points": 4
         },
         {
           "id": "benin",
           "name": "Bénin",
           "flag": "🇧🇯",
           "played": 3,
+          "won": 1,
+          "drawn": 1,
+          "lost": 1,
+          "goalsFor": 3,
+          "goalsAgainst": 4,
+          "goalDifference": -1,
+          "points": 4
+        },
+        {
+          "id": "botswana",
+          "name": "Botswana",
+          "flag": "🇧🇼",
+          "played": 3,
           "won": 0,
           "drawn": 1,
           "lost": 2,
-          "goalsFor": 1,
-          "goalsAgainst": 3,
-          "goalDifference": -2,
+          "goalsFor": 2,
+          "goalsAgainst": 5,
+          "goalDifference": -3,
           "points": 1
         }
       ]
@@ -534,8 +534,8 @@
           "won": 3,
           "drawn": 0,
           "lost": 0,
-          "goalsFor": 7,
-          "goalsAgainst": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 2,
           "goalDifference": 6,
           "points": 9
         },
@@ -547,8 +547,8 @@
           "won": 2,
           "drawn": 0,
           "lost": 1,
-          "goalsFor": 5,
-          "goalsAgainst": 2,
+          "goalsFor": 6,
+          "goalsAgainst": 3,
           "goalDifference": 3,
           "points": 6
         },
@@ -560,9 +560,9 @@
           "won": 1,
           "drawn": 0,
           "lost": 2,
-          "goalsFor": 2,
-          "goalsAgainst": 5,
-          "goalDifference": -3,
+          "goalsFor": 3,
+          "goalsAgainst": 7,
+          "goalDifference": -4,
           "points": 3
         },
         {
@@ -573,9 +573,9 @@
           "won": 0,
           "drawn": 0,
           "lost": 3,
-          "goalsFor": 1,
+          "goalsFor": 2,
           "goalsAgainst": 7,
-          "goalDifference": -6,
+          "goalDifference": -5,
           "points": 0
         }
       ]
@@ -592,9 +592,9 @@
           "won": 2,
           "drawn": 1,
           "lost": 0,
-          "goalsFor": 4,
+          "goalsFor": 6,
           "goalsAgainst": 1,
-          "goalDifference": 3,
+          "goalDifference": 5,
           "points": 7
         },
         {
@@ -605,9 +605,9 @@
           "won": 1,
           "drawn": 0,
           "lost": 2,
-          "goalsFor": 4,
-          "goalsAgainst": 5,
-          "goalDifference": -1,
+          "goalsFor": 3,
+          "goalsAgainst": 6,
+          "goalDifference": -3,
           "points": 3
         },
         {
@@ -615,13 +615,13 @@
           "name": "Gabon",
           "flag": "🇬🇦",
           "played": 3,
-          "won": 1,
+          "won": 0,
           "drawn": 2,
-          "lost": 0,
-          "goalsFor": 4,
-          "goalsAgainst": 2,
-          "goalDifference": 2,
-          "points": 5
+          "lost": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 4,
+          "goalDifference": -2,
+          "points": 2
         },
         {
           "id": "mozambique",
