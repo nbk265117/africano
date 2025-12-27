@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PinProtection from '../components/PinProtection';
 import PronosticsView from '../components/PronosticsView';
 ---
 
 <Layout title="Pronostics - CAN 2025">
-  <PronosticsView client:load />
+  <PinProtection client:load correctPin="1991">
+    <PronosticsView />
+  </PinProtection>
 </Layout>
-
