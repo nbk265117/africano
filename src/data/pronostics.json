@@ -156,7 +156,7 @@
       "team1": "maroc",
       "team2": "mali",
       "score1": 1,
-      "score2": 1,
+      "score2": 0,
       "status": "finished",
       "real": true
     },
@@ -166,8 +166,9 @@
       "team1": "benin",
       "team2": "botswana",
       "score1": 1,
-      "score2": 1,
-      "status": "prediction"
+      "score2": 0,
+      "status": "finished",
+      "real": true
     },
     {
       "matchId": "match-18",
@@ -175,26 +176,29 @@
       "team1": "senegal",
       "team2": "rd-congo",
       "score1": 1,
-      "score2": 0,
-      "status": "prediction"
+      "score2": 1,
+      "status": "finished",
+      "real": true
     },
     {
       "matchId": "match-19",
       "groupId": "C",
       "team1": "ouganda",
       "team2": "tanzanie",
-      "score1": 0,
-      "score2": 0,
-      "status": "prediction"
+      "score1": 1,
+      "score2": 1,
+      "status": "finished",
+      "real": true
     },
     {
       "matchId": "match-20",
       "groupId": "C",
       "team1": "nigeria",
       "team2": "tunisie",
-      "score1": 1,
-      "score2": 1,
-      "status": "prediction"
+      "score1": 3,
+      "score2": 2,
+      "status": "finished",
+      "real": true
     },
     {
       "matchId": "match-21",
@@ -351,13 +355,13 @@
           "name": "Maroc",
           "flag": "🇲🇦",
           "played": 3,
-          "won": 2,
-          "drawn": 1,
+          "won": 3,
+          "drawn": 0,
           "lost": 0,
           "goalsFor": 5,
-          "goalsAgainst": 1,
-          "goalDifference": 4,
-          "points": 7
+          "goalsAgainst": 0,
+          "goalDifference": 5,
+          "points": 9
         },
         {
           "id": "comores",
@@ -378,12 +382,12 @@
           "flag": "🇲🇱",
           "played": 3,
           "won": 0,
-          "drawn": 2,
-          "lost": 1,
+          "drawn": 1,
+          "lost": 2,
           "goalsFor": 2,
           "goalsAgainst": 3,
           "goalDifference": -1,
-          "points": 2
+          "points": 1
         },
         {
           "id": "zambie",
@@ -467,13 +471,13 @@
           "name": "Nigéria",
           "flag": "🇳🇬",
           "played": 3,
-          "won": 2,
-          "drawn": 1,
+          "won": 3,
+          "drawn": 0,
           "lost": 0,
-          "goalsFor": 5,
-          "goalsAgainst": 2,
-          "goalDifference": 3,
-          "points": 7
+          "goalsFor": 7,
+          "goalsAgainst": 3,
+          "goalDifference": 4,
+          "points": 9
         },
         {
           "id": "tunisie",
@@ -481,12 +485,12 @@
           "flag": "🇹🇳",
           "played": 3,
           "won": 2,
-          "drawn": 1,
-          "lost": 0,
-          "goalsFor": 6,
-          "goalsAgainst": 3,
-          "goalDifference": 3,
-          "points": 7
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 5,
+          "goalDifference": 2,
+          "points": 6
         },
         {
           "id": "tanzanie",
@@ -496,8 +500,8 @@
           "won": 0,
           "drawn": 1,
           "lost": 2,
-          "goalsFor": 2,
-          "goalsAgainst": 5,
+          "goalsFor": 3,
+          "goalsAgainst": 6,
           "goalDifference": -3,
           "points": 1
         },
@@ -509,8 +513,8 @@
           "won": 0,
           "drawn": 1,
           "lost": 2,
-          "goalsFor": 1,
-          "goalsAgainst": 5,
+          "goalsFor": 2,
+          "goalsAgainst": 6,
           "goalDifference": -4,
           "points": 1
         }
@@ -526,12 +530,12 @@
           "flag": "🇸🇳",
           "played": 3,
           "won": 2,
-          "drawn": 0,
-          "lost": 1,
+          "drawn": 1,
+          "lost": 0,
           "goalsFor": 6,
           "goalsAgainst": 1,
           "goalDifference": 5,
-          "points": 6
+          "points": 7
         },
         {
           "id": "rd-congo",
@@ -539,25 +543,25 @@
           "flag": "🇨🇩",
           "played": 3,
           "won": 1,
-          "drawn": 1,
-          "lost": 1,
-          "goalsFor": 2,
+          "drawn": 2,
+          "lost": 0,
+          "goalsFor": 3,
           "goalsAgainst": 2,
-          "goalDifference": 0,
-          "points": 4
+          "goalDifference": 1,
+          "points": 5
         },
         {
           "id": "benin",
           "name": "Bénin",
           "flag": "🇧🇯",
           "played": 3,
-          "won": 0,
-          "drawn": 1,
+          "won": 1,
+          "drawn": 0,
           "lost": 2,
           "goalsFor": 1,
-          "goalsAgainst": 4,
-          "goalDifference": -3,
-          "points": 1
+          "goalsAgainst": 3,
+          "goalDifference": -2,
+          "points": 3
         },
         {
           "id": "botswana",
@@ -565,12 +569,12 @@
           "flag": "🇧🇼",
           "played": 3,
           "won": 0,
-          "drawn": 2,
-          "lost": 1,
-          "goalsFor": 2,
+          "drawn": 1,
+          "lost": 2,
+          "goalsFor": 1,
           "goalsAgainst": 5,
-          "goalDifference": -3,
-          "points": 2
+          "goalDifference": -4,
+          "points": 1
         }
       ]
     },
