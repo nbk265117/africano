@@ -156,7 +156,7 @@
       "team1": "maroc",
       "team2": "mali",
       "score1": 1,
-      "score2": 0,
+      "score2": 1,
       "status": "finished",
       "real": true
     },
@@ -355,13 +355,13 @@
           "name": "Maroc",
           "flag": "🇲🇦",
           "played": 3,
-          "won": 3,
-          "drawn": 0,
+          "won": 2,
+          "drawn": 1,
           "lost": 0,
           "goalsFor": 5,
-          "goalsAgainst": 0,
-          "goalDifference": 5,
-          "points": 9
+          "goalsAgainst": 1,
+          "goalDifference": 4,
+          "points": 7
         },
         {
           "id": "comores",
@@ -382,12 +382,12 @@
           "flag": "🇲🇱",
           "played": 3,
           "won": 0,
-          "drawn": 1,
-          "lost": 2,
+          "drawn": 2,
+          "lost": 1,
           "goalsFor": 2,
-          "goalsAgainst": 3,
-          "goalDifference": -1,
-          "points": 1
+          "goalsAgainst": 2,
+          "goalDifference": 0,
+          "points": 2
         },
         {
           "id": "zambie",
