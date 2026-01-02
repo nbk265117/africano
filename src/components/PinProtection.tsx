@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import './PinProtection.css';
+import PronosticsView from './PronosticsView';
 
 interface PinProtectionProps {
-  children: React.ReactNode;
   correctPin?: string;
 }
 
-export default function PinProtection({ children, correctPin = '1991' }: PinProtectionProps) {
+export default function PinProtection({ correctPin = '1991' }: PinProtectionProps) {
   const [pin, setPin] = useState(['', '', '', '']);
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [error, setError] = useState(false);
@@ -92,7 +92,7 @@ export default function PinProtection({ children, correctPin = '1991' }: PinProt
 
   // Si déverrouillé, afficher le contenu
   if (isUnlocked) {
-    return <>{children}</>;
+    return <PronosticsView />;
   }
 
   // Sinon, afficher l'écran de PIN
