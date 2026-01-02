@@ -719,9 +719,14 @@
       "time": "17:00",
       "team1": "senegal",
       "team2": "soudan",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 2,
+        "score2": 0,
+        "winner": "senegal",
+        "confidence": "high",
+        "analysis": "Champion CAN 2021, Sénégal 1er du groupe D (7 pts). Sadio Mané en forme. Soudan qualifié en 3ème avec une seule victoire. Écart de niveau trop important."
+      },
+      "status": "prediction"
     },
     {
       "matchId": "r16-2",
@@ -730,9 +735,14 @@
       "time": "20:00",
       "team1": "mali",
       "team2": "tunisie",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 1,
+        "score2": 0,
+        "winner": "mali",
+        "confidence": "medium",
+        "analysis": "14ème confrontation, bilan équilibré (6V Tunisie, 4V Mali, 3N). Mali a battu Tunisie 1-0 en CAN 2022. Mali solide défensivement (2 buts encaissés en 3 matchs). Match serré mais avantage Mali."
+      },
+      "status": "prediction"
     },
     {
       "matchId": "r16-3",
@@ -741,9 +751,14 @@
       "time": "17:00",
       "team1": "maroc",
       "team2": "tanzanie",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 4,
+        "score2": 0,
+        "winner": "maroc",
+        "confidence": "very_high",
+        "analysis": "Maroc pays hôte, 1er groupe A (7 pts). El Kaabi et Diaz co-meilleurs buteurs (3 buts chacun). Hakimi de retour. Tanzanie qualifiée pour la 1ère fois en 8èmes (historique). Écart énorme."
+      },
+      "status": "prediction"
     },
     {
       "matchId": "r16-4",
@@ -752,9 +767,14 @@
       "time": "20:00",
       "team1": "afrique-du-sud",
       "team2": "cameroun",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 2,
+        "score2": 1,
+        "winner": "afrique-du-sud",
+        "confidence": "medium",
+        "analysis": "Afrique du Sud 3ème CAN 2023, 2ème groupe B (6 pts), plus offensive. Cameroun invaincu (5 pts) mais moins spectaculaire. Les Bafana Bafana ont éliminé le Cameroun en quarts CAN 2023."
+      },
+      "status": "prediction"
     },
     {
       "matchId": "r16-5",
@@ -763,9 +783,14 @@
       "time": "17:00",
       "team1": "egypte",
       "team2": "benin",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 2,
+        "score2": 0,
+        "winner": "egypte",
+        "confidence": "high",
+        "analysis": "Égypte record 7 titres CAN, 1er groupe B (7 pts). Salah ménagé en phase de groupes. Bénin 3ème groupe D, meilleur parcours quart 2019. Expérience égyptienne décisive."
+      },
+      "status": "prediction"
     },
     {
       "matchId": "r16-6",
@@ -774,9 +799,14 @@
       "time": "20:00",
       "team1": "nigeria",
       "team2": "mozambique",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 3,
+        "score2": 0,
+        "winner": "nigeria",
+        "confidence": "very_high",
+        "analysis": "Nigeria parfait: 9 pts, 8 buts marqués, 1er groupe C. Osimhen et Lookman (meilleure note 8.36) en feu. Finaliste CAN 2023. Mozambique 1ère victoire historique cette CAN mais niveau insuffisant."
+      },
+      "status": "prediction"
     },
     {
       "matchId": "r16-7",
@@ -785,9 +815,14 @@
       "time": "17:00",
       "team1": "algerie",
       "team2": "rd-congo",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 2,
+        "score2": 1,
+        "winner": "algerie",
+        "confidence": "medium",
+        "analysis": "Algérie parfaite: 9 pts, 7 buts, 1 encaissé. Mahrez meilleur buteur (3 buts), Maza révélation. Champion 2019. RD Congo dangereux: 7 pts, demi-finaliste 2023, Kakuta brillant. Match piège."
+      },
+      "status": "prediction"
     },
     {
       "matchId": "r16-8",
@@ -796,9 +831,14 @@
       "time": "20:00",
       "team1": "cote-d-ivoire",
       "team2": "burkina-faso",
-      "score1": null,
-      "score2": null,
-      "status": "scheduled"
+      "prediction": {
+        "score1": 2,
+        "score2": 1,
+        "winner": "cote-d-ivoire",
+        "confidence": "medium",
+        "analysis": "Derby ouest-africain. Côte d'Ivoire championne en titre 2023, 1er groupe F (7 pts). Haller et Kessié décisifs. Burkina Faso régulier (finale 2013, demi 2017 et 2021), 2ème groupe E. Match tendu."
+      },
+      "status": "prediction"
     }
   ]
 }
