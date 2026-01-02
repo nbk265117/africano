@@ -724,6 +724,8 @@
         "score2": 0,
         "winner": "senegal",
         "confidence": "high",
+        "extraTime": false,
+        "penalties": null,
         "analysis": "Champion CAN 2021, Sénégal 1er du groupe D (7 pts). Sadio Mané en forme. Soudan qualifié en 3ème avec une seule victoire. Écart de niveau trop important."
       },
       "status": "prediction"
@@ -737,10 +739,12 @@
       "team2": "tunisie",
       "prediction": {
         "score1": 1,
-        "score2": 0,
+        "score2": 1,
         "winner": "mali",
         "confidence": "medium",
-        "analysis": "14ème confrontation, bilan équilibré (6V Tunisie, 4V Mali, 3N). Mali a battu Tunisie 1-0 en CAN 2022. Mali solide défensivement (2 buts encaissés en 3 matchs). Match serré mais avantage Mali."
+        "extraTime": true,
+        "penalties": { "team1": 4, "team2": 3 },
+        "analysis": "14ème confrontation, rivalité historique. CAN 2022: Mali 1-0. Match de l'arbitre Sikazwe qui avait sifflé trop tôt! Egalité logique, Mali plus solide aux TAB."
       },
       "status": "prediction"
     },
@@ -756,7 +760,9 @@
         "score2": 0,
         "winner": "maroc",
         "confidence": "very_high",
-        "analysis": "Maroc pays hôte, 1er groupe A (7 pts). El Kaabi et Diaz co-meilleurs buteurs (3 buts chacun). Hakimi de retour. Tanzanie qualifiée pour la 1ère fois en 8èmes (historique). Écart énorme."
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Maroc pays hôte, El Kaabi et Diaz (6 buts à eux deux). Hakimi de retour. Tanzanie 1ère qualif historique en 8èmes mais écart énorme."
       },
       "status": "prediction"
     },
@@ -768,11 +774,13 @@
       "team1": "afrique-du-sud",
       "team2": "cameroun",
       "prediction": {
-        "score1": 2,
+        "score1": 1,
         "score2": 1,
         "winner": "afrique-du-sud",
         "confidence": "medium",
-        "analysis": "Afrique du Sud 3ème CAN 2023, 2ème groupe B (6 pts), plus offensive. Cameroun invaincu (5 pts) mais moins spectaculaire. Les Bafana Bafana ont éliminé le Cameroun en quarts CAN 2023."
+        "extraTime": true,
+        "penalties": { "team1": 5, "team2": 4 },
+        "analysis": "Remake quarts CAN 2023 (victoire Bafana Bafana). Cameroun invaincu mais Afrique du Sud 3ème 2023. Match très serré, décidé aux TAB."
       },
       "status": "prediction"
     },
@@ -788,7 +796,9 @@
         "score2": 0,
         "winner": "egypte",
         "confidence": "high",
-        "analysis": "Égypte record 7 titres CAN, 1er groupe B (7 pts). Salah ménagé en phase de groupes. Bénin 3ème groupe D, meilleur parcours quart 2019. Expérience égyptienne décisive."
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Égypte record 7 titres CAN. Salah prêt pour les phases finales. Bénin (quart 2019) courageux mais limité."
       },
       "status": "prediction"
     },
@@ -804,7 +814,9 @@
         "score2": 0,
         "winner": "nigeria",
         "confidence": "very_high",
-        "analysis": "Nigeria parfait: 9 pts, 8 buts marqués, 1er groupe C. Osimhen et Lookman (meilleure note 8.36) en feu. Finaliste CAN 2023. Mozambique 1ère victoire historique cette CAN mais niveau insuffisant."
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Nigeria parfait: 9 pts, 8 buts. Osimhen/Lookman imparables. Finaliste 2023. Mozambique historique mais insuffisant."
       },
       "status": "prediction"
     },
@@ -820,7 +832,9 @@
         "score2": 1,
         "winner": "algerie",
         "confidence": "medium",
-        "analysis": "Algérie parfaite: 9 pts, 7 buts, 1 encaissé. Mahrez meilleur buteur (3 buts), Maza révélation. Champion 2019. RD Congo dangereux: 7 pts, demi-finaliste 2023, Kakuta brillant. Match piège."
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Algérie parfaite (9 pts), Mahrez 3 buts. RD Congo demi-finaliste 2023, Kakuta brillant. Match piège mais Fennecs trop forts."
       },
       "status": "prediction"
     },
@@ -832,11 +846,157 @@
       "team1": "cote-d-ivoire",
       "team2": "burkina-faso",
       "prediction": {
-        "score1": 2,
+        "score1": 1,
         "score2": 1,
         "winner": "cote-d-ivoire",
         "confidence": "medium",
-        "analysis": "Derby ouest-africain. Côte d'Ivoire championne en titre 2023, 1er groupe F (7 pts). Haller et Kessié décisifs. Burkina Faso régulier (finale 2013, demi 2017 et 2021), 2ème groupe E. Match tendu."
+        "extraTime": true,
+        "penalties": { "team1": 4, "team2": 2 },
+        "analysis": "Derby ouest-africain tendu. Éléphants champions 2023. Burkina régulier (finale 2013, demi 2017/2021). Égalité puis Côte d'Ivoire aux TAB."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "qf-1",
+      "round": "quarts",
+      "date": "2026-01-09",
+      "time": "17:00",
+      "team1": "senegal",
+      "team2": "mali",
+      "prediction": {
+        "score1": 2,
+        "score2": 1,
+        "winner": "senegal",
+        "confidence": "medium",
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Derby de la Sénégambie. Sénégal champion 2021, plus expérimenté. Mali solide mais Mané fait la différence."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "qf-2",
+      "round": "quarts",
+      "date": "2026-01-09",
+      "time": "20:00",
+      "team1": "maroc",
+      "team2": "afrique-du-sud",
+      "prediction": {
+        "score1": 3,
+        "score2": 1,
+        "winner": "maroc",
+        "confidence": "high",
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Maroc favori à domicile, public en feu. El Kaabi/Diaz/Hakimi trop forts. Afrique du Sud fatiguée après les TAB."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "qf-3",
+      "round": "quarts",
+      "date": "2026-01-10",
+      "time": "17:00",
+      "team1": "egypte",
+      "team2": "nigeria",
+      "prediction": {
+        "score1": 1,
+        "score2": 2,
+        "winner": "nigeria",
+        "confidence": "medium",
+        "extraTime": true,
+        "penalties": null,
+        "analysis": "Choc des titans! 10 titres CAN à eux deux. Nigeria en feu avec Osimhen/Lookman. Égypte résiste mais Nigeria gagne en prolongation."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "qf-4",
+      "round": "quarts",
+      "date": "2026-01-10",
+      "time": "20:00",
+      "team1": "algerie",
+      "team2": "cote-d-ivoire",
+      "prediction": {
+        "score1": 1,
+        "score2": 1,
+        "winner": "algerie",
+        "confidence": "low",
+        "extraTime": true,
+        "penalties": { "team1": 4, "team2": 2 },
+        "analysis": "Affiche de gala! Champions 2019 vs 2023. Match très tactique. Égalité après prolongation, Algérie plus froide aux TAB."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "sf-1",
+      "round": "demis",
+      "date": "2026-01-14",
+      "time": "20:00",
+      "team1": "senegal",
+      "team2": "maroc",
+      "prediction": {
+        "score1": 1,
+        "score2": 2,
+        "winner": "maroc",
+        "confidence": "medium",
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Demi-finale de rêve! Maroc porté par son public. Sénégal dangereux mais El Kaabi et Diaz font la différence à domicile."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "sf-2",
+      "round": "demis",
+      "date": "2026-01-15",
+      "time": "20:00",
+      "team1": "nigeria",
+      "team2": "algerie",
+      "prediction": {
+        "score1": 0,
+        "score2": 1,
+        "winner": "algerie",
+        "confidence": "medium",
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Remake finale 2019 (Algérie 1-0). Match fermé, Algérie pragmatique. Mahrez décisif sur coup franc. Nigeria frustré."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "final",
+      "round": "finale",
+      "date": "2026-01-18",
+      "time": "20:00",
+      "team1": "maroc",
+      "team2": "algerie",
+      "prediction": {
+        "score1": 2,
+        "score2": 1,
+        "winner": "maroc",
+        "confidence": "medium",
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Finale de rêve Maghreb! Maroc à domicile vs Algérie championne 2019. El Kaabi héros, but en or devant 80 000 supporters. Maroc champion 49 ans après 1976!"
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "3rd-place",
+      "round": "petite-finale",
+      "date": "2026-01-17",
+      "time": "20:00",
+      "team1": "senegal",
+      "team2": "nigeria",
+      "prediction": {
+        "score1": 2,
+        "score2": 2,
+        "winner": "senegal",
+        "confidence": "low",
+        "extraTime": true,
+        "penalties": { "team1": 4, "team2": 3 },
+        "analysis": "Match pour l'honneur. Les deux déçus des demis. Égalité spectaculaire, Sénégal 3ème aux TAB."
       },
       "status": "prediction"
     }
