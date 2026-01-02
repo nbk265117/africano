@@ -1005,3 +1005,263 @@
   }
 }
 
+/* ========== BRACKET STYLES ========== */
+.bracket-section {
+  margin-top: 2rem;
+}
+
+.bracket-tab {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%) !important;
+  color: #2c3e50 !important;
+  border-color: #ffc107 !important;
+}
+
+.bracket-tab.active {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%) !important;
+  color: white !important;
+}
+
+.bracket-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  justify-content: center;
+}
+
+.bracket-round {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.bracket-round-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #c1272d 0%, #006233 100%);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.bracket-match {
+  background: white;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e9ecef;
+  position: relative;
+}
+
+.bracket-team {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.bracket-team.winner {
+  background: linear-gradient(90deg, rgba(0, 128, 0, 0.15) 0%, rgba(0, 128, 0, 0.05) 100%);
+  border-left: 3px solid #28a745;
+}
+
+.bracket-team.loser {
+  background: rgba(0, 0, 0, 0.03);
+  opacity: 0.6;
+}
+
+.bracket-team.champion {
+  background: linear-gradient(90deg, rgba(255, 193, 7, 0.3) 0%, rgba(255, 193, 7, 0.1) 100%);
+  border-left: 3px solid #ffc107;
+}
+
+.bracket-flag {
+  font-size: 1.25rem;
+}
+
+.bracket-name {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bracket-team.winner .bracket-name {
+  color: #155724;
+  font-weight: 700;
+}
+
+.bracket-team.loser .bracket-name {
+  color: #6c757d;
+}
+
+.bracket-score {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  min-width: 20px;
+  text-align: center;
+}
+
+.bracket-score sup {
+  font-size: 0.65rem;
+  color: #c1272d;
+}
+
+.bracket-team.winner .bracket-score {
+  color: #155724;
+}
+
+.bracket-extra {
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%);
+  background: #ffc107;
+  color: #2c3e50;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Bracket Final */
+.bracket-final {
+  align-items: center;
+}
+
+.bracket-final-match {
+  border: 3px solid #ffc107;
+  background: linear-gradient(135deg, #fffde7 0%, #fff 100%);
+}
+
+.bracket-champion {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #c1272d 0%, #006233 100%);
+  border-radius: 12px;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.bracket-crown {
+  font-size: 2.5rem;
+  animation: bounce 2s infinite;
+}
+
+.bracket-champion-flag {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.bracket-champion-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.bracket-champion-title {
+  font-size: 0.8rem;
+  color: #ffc107;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 0.25rem;
+}
+
+/* Légende */
+.bracket-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.legend-winner {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(90deg, rgba(0, 128, 0, 0.3) 0%, rgba(0, 128, 0, 0.1) 100%);
+  border-left: 3px solid #28a745;
+  border-radius: 3px;
+}
+
+.legend-loser {
+  width: 16px;
+  height: 16px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+/* Responsive Bracket */
+@media (max-width: 900px) {
+  .bracket-container {
+    justify-content: flex-start;
+  }
+
+  .bracket-round {
+    min-width: 150px;
+  }
+
+  .bracket-name {
+    font-size: 0.75rem;
+  }
+
+  .bracket-flag {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bracket-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bracket-round {
+    min-width: 100%;
+  }
+
+  .bracket-round-title {
+    font-size: 1.1rem;
+  }
+
+  .bracket-match {
+    margin-bottom: 0.5rem;
+  }
+
+  .bracket-extra {
+    position: static;
+    transform: none;
+    display: block;
+    text-align: center;
+    margin-top: 0.25rem;
+    border-radius: 20px;
+  }
+
+  .bracket-legend {
+    gap: 1rem;
+  }
+}
+

@@ -8,7 +8,7 @@ import Navigation from './Navigation';
 import './PronosticsView.css';
 
 export default function PronosticsView() {
-  const [activeTab, setActiveTab] = useState<'groupes' | '8emes' | 'quarts' | 'demis' | 'finale'>('groupes');
+  const [activeTab, setActiveTab] = useState<'groupes' | '8emes' | 'quarts' | 'demis' | 'finale' | 'bracket'>('groupes');
 
   // Charger directement les pronostics depuis le JSON
   const simulatedGroups: SimulatedGroup[] = pronostics?.groups || [];
@@ -180,6 +180,13 @@ export default function PronosticsView() {
           >
             <span className="tab-icon">🏆</span>
             <span className="tab-text">Finale</span>
+          </button>
+          <button
+            className={`phase-tab bracket-tab ${activeTab === 'bracket' ? 'active' : ''}`}
+            onClick={() => setActiveTab('bracket')}
+          >
+            <span className="tab-icon">📋</span>
+            <span className="tab-text">Tableau</span>
           </button>
         </div>
 
@@ -360,6 +367,178 @@ export default function PronosticsView() {
                 {renderKnockoutMatch(thirdPlaceMatch)}
               </div>
             )}
+          </section>
+        )}
+
+        {/* Bracket complet */}
+        {activeTab === 'bracket' && (
+          <section className="bracket-section">
+            <h2 className="section-title">📋 Tableau Complet CAN 2025</h2>
+            <p className="section-subtitle">Chemin vers la gloire</p>
+
+            <div className="bracket-container">
+              {/* Colonne 8èmes */}
+              <div className="bracket-round">
+                <h3 className="bracket-round-title">8èmes</h3>
+                {r16Matches.map(match => {
+                  const team1Info = getTeamInfo(match.team1);
+                  const team2Info = getTeamInfo(match.team2);
+                  const pred = match.prediction;
+                  const isWinner1 = pred.winner === match.team1;
+                  const isWinner2 = pred.winner === match.team2;
+                  const hasPenalties = pred.penalties !== null;
+
+                  return (
+                    <div key={match.matchId} className="bracket-match">
+                      <div className={`bracket-team ${isWinner1 ? 'winner' : 'loser'}`}>
+                        <span className="bracket-flag">{team1Info.flag}</span>
+                        <span className="bracket-name">{team1Info.name}</span>
+                        <span className="bracket-score">
+                          {pred.score1}
+                          {hasPenalties && isWinner1 && <sup>({pred.penalties?.team1})</sup>}
+                        </span>
+                      </div>
+                      <div className={`bracket-team ${isWinner2 ? 'winner' : 'loser'}`}>
+                        <span className="bracket-flag">{team2Info.flag}</span>
+                        <span className="bracket-name">{team2Info.name}</span>
+                        <span className="bracket-score">
+                          {pred.score2}
+                          {hasPenalties && isWinner2 && <sup>({pred.penalties?.team2})</sup>}
+                        </span>
+                      </div>
+                      {pred.extraTime && (
+                        <div className="bracket-extra">
+                          {hasPenalties ? 'TAB' : 'a.p.'}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Colonne Quarts */}
+              <div className="bracket-round">
+                <h3 className="bracket-round-title">Quarts</h3>
+                {qfMatches.map(match => {
+                  const team1Info = getTeamInfo(match.team1);
+                  const team2Info = getTeamInfo(match.team2);
+                  const pred = match.prediction;
+                  const isWinner1 = pred.winner === match.team1;
+                  const isWinner2 = pred.winner === match.team2;
+                  const hasPenalties = pred.penalties !== null;
+
+                  return (
+                    <div key={match.matchId} className="bracket-match">
+                      <div className={`bracket-team ${isWinner1 ? 'winner' : 'loser'}`}>
+                        <span className="bracket-flag">{team1Info.flag}</span>
+                        <span className="bracket-name">{team1Info.name}</span>
+                        <span className="bracket-score">
+                          {pred.score1}
+                          {hasPenalties && isWinner1 && <sup>({pred.penalties?.team1})</sup>}
+                        </span>
+                      </div>
+                      <div className={`bracket-team ${isWinner2 ? 'winner' : 'loser'}`}>
+                        <span className="bracket-flag">{team2Info.flag}</span>
+                        <span className="bracket-name">{team2Info.name}</span>
+                        <span className="bracket-score">
+                          {pred.score2}
+                          {hasPenalties && isWinner2 && <sup>({pred.penalties?.team2})</sup>}
+                        </span>
+                      </div>
+                      {pred.extraTime && (
+                        <div className="bracket-extra">
+                          {hasPenalties ? 'TAB' : 'a.p.'}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Colonne Demis */}
+              <div className="bracket-round">
+                <h3 className="bracket-round-title">Demis</h3>
+                {sfMatches.map(match => {
+                  const team1Info = getTeamInfo(match.team1);
+                  const team2Info = getTeamInfo(match.team2);
+                  const pred = match.prediction;
+                  const isWinner1 = pred.winner === match.team1;
+                  const isWinner2 = pred.winner === match.team2;
+                  const hasPenalties = pred.penalties !== null;
+
+                  return (
+                    <div key={match.matchId} className="bracket-match">
+                      <div className={`bracket-team ${isWinner1 ? 'winner' : 'loser'}`}>
+                        <span className="bracket-flag">{team1Info.flag}</span>
+                        <span className="bracket-name">{team1Info.name}</span>
+                        <span className="bracket-score">
+                          {pred.score1}
+                          {hasPenalties && isWinner1 && <sup>({pred.penalties?.team1})</sup>}
+                        </span>
+                      </div>
+                      <div className={`bracket-team ${isWinner2 ? 'winner' : 'loser'}`}>
+                        <span className="bracket-flag">{team2Info.flag}</span>
+                        <span className="bracket-name">{team2Info.name}</span>
+                        <span className="bracket-score">
+                          {pred.score2}
+                          {hasPenalties && isWinner2 && <sup>({pred.penalties?.team2})</sup>}
+                        </span>
+                      </div>
+                      {pred.extraTime && (
+                        <div className="bracket-extra">
+                          {hasPenalties ? 'TAB' : 'a.p.'}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Colonne Finale */}
+              <div className="bracket-round bracket-final">
+                <h3 className="bracket-round-title">Finale</h3>
+                {finalMatch && (() => {
+                  const team1Info = getTeamInfo(finalMatch.team1);
+                  const team2Info = getTeamInfo(finalMatch.team2);
+                  const pred = finalMatch.prediction;
+                  const isWinner1 = pred.winner === finalMatch.team1;
+                  const isWinner2 = pred.winner === finalMatch.team2;
+
+                  return (
+                    <div className="bracket-match bracket-final-match">
+                      <div className={`bracket-team ${isWinner1 ? 'winner champion' : 'loser'}`}>
+                        <span className="bracket-flag">{team1Info.flag}</span>
+                        <span className="bracket-name">{team1Info.name}</span>
+                        <span className="bracket-score">{pred.score1}</span>
+                      </div>
+                      <div className={`bracket-team ${isWinner2 ? 'winner champion' : 'loser'}`}>
+                        <span className="bracket-flag">{team2Info.flag}</span>
+                        <span className="bracket-name">{team2Info.name}</span>
+                        <span className="bracket-score">{pred.score2}</span>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Champion */}
+                {finalMatch && (
+                  <div className="bracket-champion">
+                    <div className="bracket-crown">👑</div>
+                    <div className="bracket-champion-flag">{getTeamInfo(finalMatch.prediction.winner).flag}</div>
+                    <div className="bracket-champion-name">{getTeamInfo(finalMatch.prediction.winner).name}</div>
+                    <div className="bracket-champion-title">CHAMPION</div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Légende */}
+            <div className="bracket-legend">
+              <span className="legend-item"><span className="legend-winner"></span> Qualifié</span>
+              <span className="legend-item"><span className="legend-loser"></span> Éliminé</span>
+              <span className="legend-item">TAB = Tirs au but</span>
+              <span className="legend-item">a.p. = Après prolongation</span>
+            </div>
           </section>
         )}
       </div>
