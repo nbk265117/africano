@@ -370,174 +370,351 @@ export default function PronosticsView() {
           </section>
         )}
 
-        {/* Bracket complet */}
+        {/* Bracket complet - Format officiel CAF */}
         {activeTab === 'bracket' && (
           <section className="bracket-section">
             <h2 className="section-title">📋 Tableau Complet CAN 2025</h2>
-            <p className="section-subtitle">Chemin vers la gloire</p>
+            <p className="section-subtitle">Les affiches des phases éliminatoires</p>
 
-            <div className="bracket-container">
-              {/* Colonne 8èmes */}
-              <div className="bracket-round">
-                <h3 className="bracket-round-title">8èmes</h3>
-                {r16Matches.map(match => {
-                  const team1Info = getTeamInfo(match.team1);
-                  const team2Info = getTeamInfo(match.team2);
-                  const pred = match.prediction;
-                  const isWinner1 = pred.winner === match.team1;
-                  const isWinner2 = pred.winner === match.team2;
-                  const hasPenalties = pred.penalties !== null;
-
-                  return (
-                    <div key={match.matchId} className="bracket-match">
-                      <div className={`bracket-team ${isWinner1 ? 'winner' : 'loser'}`}>
-                        <span className="bracket-flag">{team1Info.flag}</span>
-                        <span className="bracket-name">{team1Info.name}</span>
-                        <span className="bracket-score">
-                          {pred.score1}
-                          {hasPenalties && isWinner1 && <sup>({pred.penalties?.team1})</sup>}
-                        </span>
-                      </div>
-                      <div className={`bracket-team ${isWinner2 ? 'winner' : 'loser'}`}>
-                        <span className="bracket-flag">{team2Info.flag}</span>
-                        <span className="bracket-name">{team2Info.name}</span>
-                        <span className="bracket-score">
-                          {pred.score2}
-                          {hasPenalties && isWinner2 && <sup>({pred.penalties?.team2})</sup>}
-                        </span>
-                      </div>
-                      {pred.extraTime && (
-                        <div className="bracket-extra">
-                          {hasPenalties ? 'TAB' : 'a.p.'}
+            <div className="bracket-official">
+              {/* CÔTÉ GAUCHE */}
+              <div className="bracket-side bracket-left">
+                {/* 8èmes gauche */}
+                <div className="bracket-column r16-col">
+                  {/* Match 1: Sénégal vs Soudan */}
+                  {r16Matches[0] && (() => {
+                    const match = r16Matches[0];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
                         </div>
-                      )}
-                    </div>
-                  );
-                })}
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  {/* Match 2: Mali vs Tunisie */}
+                  {r16Matches[1] && (() => {
+                    const match = r16Matches[1];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  {/* Match 5: Égypte vs Bénin */}
+                  {r16Matches[4] && (() => {
+                    const match = r16Matches[4];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  {/* Match 8: Côte d'Ivoire vs Burkina Faso */}
+                  {r16Matches[7] && (() => {
+                    const match = r16Matches[7];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+
+                {/* Quarts gauche */}
+                <div className="bracket-column qf-col">
+                  <div className="bracket-label">1/4</div>
+                  {qfMatches[0] && (() => {
+                    const match = qfMatches[0];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup qf-match">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  <div className="bracket-label">1/4</div>
+                  {qfMatches[1] && (() => {
+                    const match = qfMatches[1];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup qf-match">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+
+                {/* Demi gauche */}
+                <div className="bracket-column sf-col">
+                  <div className="bracket-label">1/2</div>
+                  {sfMatches[0] && (() => {
+                    const match = sfMatches[0];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup sf-match">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
               </div>
 
-              {/* Colonne Quarts */}
-              <div className="bracket-round">
-                <h3 className="bracket-round-title">Quarts</h3>
-                {qfMatches.map(match => {
-                  const team1Info = getTeamInfo(match.team1);
-                  const team2Info = getTeamInfo(match.team2);
-                  const pred = match.prediction;
-                  const isWinner1 = pred.winner === match.team1;
-                  const isWinner2 = pred.winner === match.team2;
-                  const hasPenalties = pred.penalties !== null;
-
-                  return (
-                    <div key={match.matchId} className="bracket-match">
-                      <div className={`bracket-team ${isWinner1 ? 'winner' : 'loser'}`}>
-                        <span className="bracket-flag">{team1Info.flag}</span>
-                        <span className="bracket-name">{team1Info.name}</span>
-                        <span className="bracket-score">
-                          {pred.score1}
-                          {hasPenalties && isWinner1 && <sup>({pred.penalties?.team1})</sup>}
-                        </span>
-                      </div>
-                      <div className={`bracket-team ${isWinner2 ? 'winner' : 'loser'}`}>
-                        <span className="bracket-flag">{team2Info.flag}</span>
-                        <span className="bracket-name">{team2Info.name}</span>
-                        <span className="bracket-score">
-                          {pred.score2}
-                          {hasPenalties && isWinner2 && <sup>({pred.penalties?.team2})</sup>}
-                        </span>
-                      </div>
-                      {pred.extraTime && (
-                        <div className="bracket-extra">
-                          {hasPenalties ? 'TAB' : 'a.p.'}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Colonne Demis */}
-              <div className="bracket-round">
-                <h3 className="bracket-round-title">Demis</h3>
-                {sfMatches.map(match => {
-                  const team1Info = getTeamInfo(match.team1);
-                  const team2Info = getTeamInfo(match.team2);
-                  const pred = match.prediction;
-                  const isWinner1 = pred.winner === match.team1;
-                  const isWinner2 = pred.winner === match.team2;
-                  const hasPenalties = pred.penalties !== null;
-
-                  return (
-                    <div key={match.matchId} className="bracket-match">
-                      <div className={`bracket-team ${isWinner1 ? 'winner' : 'loser'}`}>
-                        <span className="bracket-flag">{team1Info.flag}</span>
-                        <span className="bracket-name">{team1Info.name}</span>
-                        <span className="bracket-score">
-                          {pred.score1}
-                          {hasPenalties && isWinner1 && <sup>({pred.penalties?.team1})</sup>}
-                        </span>
-                      </div>
-                      <div className={`bracket-team ${isWinner2 ? 'winner' : 'loser'}`}>
-                        <span className="bracket-flag">{team2Info.flag}</span>
-                        <span className="bracket-name">{team2Info.name}</span>
-                        <span className="bracket-score">
-                          {pred.score2}
-                          {hasPenalties && isWinner2 && <sup>({pred.penalties?.team2})</sup>}
-                        </span>
-                      </div>
-                      {pred.extraTime && (
-                        <div className="bracket-extra">
-                          {hasPenalties ? 'TAB' : 'a.p.'}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Colonne Finale */}
-              <div className="bracket-round bracket-final">
-                <h3 className="bracket-round-title">Finale</h3>
+              {/* CENTRE - FINALE */}
+              <div className="bracket-center">
+                <div className="finale-label">FINALE</div>
                 {finalMatch && (() => {
                   const team1Info = getTeamInfo(finalMatch.team1);
                   const team2Info = getTeamInfo(finalMatch.team2);
                   const pred = finalMatch.prediction;
-                  const isWinner1 = pred.winner === finalMatch.team1;
-                  const isWinner2 = pred.winner === finalMatch.team2;
-
                   return (
-                    <div className="bracket-match bracket-final-match">
-                      <div className={`bracket-team ${isWinner1 ? 'winner champion' : 'loser'}`}>
-                        <span className="bracket-flag">{team1Info.flag}</span>
-                        <span className="bracket-name">{team1Info.name}</span>
-                        <span className="bracket-score">{pred.score1}</span>
+                    <div className="finale-matchup">
+                      <div className={`finale-team ${pred.winner === finalMatch.team1 ? 'champion' : ''}`}>
+                        <span className="finale-flag">{team1Info.flag}</span>
+                        <span className="finale-name">{team1Info.name}</span>
+                        <span className="finale-score">{pred.score1}</span>
                       </div>
-                      <div className={`bracket-team ${isWinner2 ? 'winner champion' : 'loser'}`}>
-                        <span className="bracket-flag">{team2Info.flag}</span>
-                        <span className="bracket-name">{team2Info.name}</span>
-                        <span className="bracket-score">{pred.score2}</span>
+                      <div className="finale-vs">VS</div>
+                      <div className={`finale-team ${pred.winner === finalMatch.team2 ? 'champion' : ''}`}>
+                        <span className="finale-score">{pred.score2}</span>
+                        <span className="finale-name">{team2Info.name}</span>
+                        <span className="finale-flag">{team2Info.flag}</span>
                       </div>
                     </div>
                   );
                 })()}
-
                 {/* Champion */}
                 {finalMatch && (
-                  <div className="bracket-champion">
-                    <div className="bracket-crown">👑</div>
-                    <div className="bracket-champion-flag">{getTeamInfo(finalMatch.prediction.winner).flag}</div>
-                    <div className="bracket-champion-name">{getTeamInfo(finalMatch.prediction.winner).name}</div>
-                    <div className="bracket-champion-title">CHAMPION</div>
+                  <div className="bracket-champion-box">
+                    <div className="champion-crown-sm">👑</div>
+                    <div className="champion-info">
+                      <span className="champion-flag-lg">{getTeamInfo(finalMatch.prediction.winner).flag}</span>
+                      <span className="champion-name-lg">{getTeamInfo(finalMatch.prediction.winner).name}</span>
+                    </div>
+                    <div className="champion-label">CHAMPION CAN 2025</div>
                   </div>
                 )}
+              </div>
+
+              {/* CÔTÉ DROIT */}
+              <div className="bracket-side bracket-right">
+                {/* Demi droite */}
+                <div className="bracket-column sf-col">
+                  <div className="bracket-label">1/2</div>
+                  {sfMatches[1] && (() => {
+                    const match = sfMatches[1];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup sf-match derby-maghreb">
+                        <div className="derby-label">DERBY DU MAGHREB</div>
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+
+                {/* Quarts droite */}
+                <div className="bracket-column qf-col">
+                  <div className="bracket-label">1/4</div>
+                  {qfMatches[2] && (() => {
+                    const match = qfMatches[2];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup qf-match">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  <div className="bracket-label">1/4</div>
+                  {qfMatches[3] && (() => {
+                    const match = qfMatches[3];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup qf-match">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                          <span className="team-name-sm">{team1Info.name}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                          <span className="team-name-sm">{team2Info.name}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
+
+                {/* 8èmes droite */}
+                <div className="bracket-column r16-col">
+                  {/* Match 4: Afrique du Sud vs Cameroun */}
+                  {r16Matches[3] && (() => {
+                    const match = r16Matches[3];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  {/* Match 3: Maroc vs Tanzanie */}
+                  {r16Matches[2] && (() => {
+                    const match = r16Matches[2];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  {/* Match 6: Nigeria vs Mozambique */}
+                  {r16Matches[5] && (() => {
+                    const match = r16Matches[5];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  {/* Match 7: Algérie vs RD Congo */}
+                  {r16Matches[6] && (() => {
+                    const match = r16Matches[6];
+                    const team1Info = getTeamInfo(match.team1);
+                    const team2Info = getTeamInfo(match.team2);
+                    const pred = match.prediction;
+                    return (
+                      <div className="bracket-matchup">
+                        <div className={`bracket-team-row ${pred.winner === match.team1 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team1Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team1Info.flag}</span>
+                        </div>
+                        <div className={`bracket-team-row ${pred.winner === match.team2 ? 'qualified' : ''}`}>
+                          <span className="team-name-sm">{team2Info.name.toUpperCase()}</span>
+                          <span className="team-flag-sm">{team2Info.flag}</span>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </div>
               </div>
             </div>
 
             {/* Légende */}
             <div className="bracket-legend">
-              <span className="legend-item"><span className="legend-winner"></span> Qualifié</span>
-              <span className="legend-item"><span className="legend-loser"></span> Éliminé</span>
-              <span className="legend-item">TAB = Tirs au but</span>
-              <span className="legend-item">a.p. = Après prolongation</span>
+              <span className="legend-item"><span className="legend-qualified"></span> Qualifié (prédiction)</span>
+              <span className="legend-item"><span className="legend-eliminated"></span> Éliminé (prédiction)</span>
             </div>
           </section>
         )}

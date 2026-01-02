@@ -774,13 +774,13 @@
       "team1": "afrique-du-sud",
       "team2": "cameroun",
       "prediction": {
-        "score1": 1,
+        "score1": 0,
         "score2": 1,
-        "winner": "afrique-du-sud",
+        "winner": "cameroun",
         "confidence": "medium",
-        "extraTime": true,
-        "penalties": { "team1": 5, "team2": 4 },
-        "analysis": "Remake quarts CAN 2023 (victoire Bafana Bafana). Cameroun invaincu mais Afrique du Sud 3ème 2023. Match très serré, décidé aux TAB."
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Lions Indomptables invincibles en phase de groupes. Cameroun plus expérimenté en CAN (5 titres). Eto'o supervise, l'expérience fait la différence."
       },
       "status": "prediction"
     },
@@ -879,16 +879,16 @@
       "round": "quarts",
       "date": "2026-01-09",
       "time": "20:00",
-      "team1": "maroc",
-      "team2": "afrique-du-sud",
+      "team1": "egypte",
+      "team2": "cote-d-ivoire",
       "prediction": {
-        "score1": 3,
-        "score2": 1,
-        "winner": "maroc",
-        "confidence": "high",
+        "score1": 1,
+        "score2": 2,
+        "winner": "cote-d-ivoire",
+        "confidence": "medium",
         "extraTime": false,
         "penalties": null,
-        "analysis": "Maroc favori à domicile, public en feu. El Kaabi/Diaz/Hakimi trop forts. Afrique du Sud fatiguée après les TAB."
+        "analysis": "Choc des géants! Champions en titre contre 7 fois champions. Côte d'Ivoire portée par sa dynamique victorieuse."
       },
       "status": "prediction"
     },
@@ -897,16 +897,16 @@
       "round": "quarts",
       "date": "2026-01-10",
       "time": "17:00",
-      "team1": "egypte",
-      "team2": "nigeria",
+      "team1": "maroc",
+      "team2": "cameroun",
       "prediction": {
-        "score1": 1,
-        "score2": 2,
-        "winner": "nigeria",
-        "confidence": "medium",
-        "extraTime": true,
+        "score1": 2,
+        "score2": 0,
+        "winner": "maroc",
+        "confidence": "high",
+        "extraTime": false,
         "penalties": null,
-        "analysis": "Choc des titans! 10 titres CAN à eux deux. Nigeria en feu avec Osimhen/Lookman. Égypte résiste mais Nigeria gagne en prolongation."
+        "analysis": "Maroc à domicile, public en feu. El Kaabi/Diaz/Hakimi trop forts. Lions indomptables solides mais Maroc supérieur."
       },
       "status": "prediction"
     },
@@ -915,16 +915,16 @@
       "round": "quarts",
       "date": "2026-01-10",
       "time": "20:00",
-      "team1": "algerie",
-      "team2": "cote-d-ivoire",
+      "team1": "nigeria",
+      "team2": "algerie",
       "prediction": {
         "score1": 1,
-        "score2": 1,
+        "score2": 2,
         "winner": "algerie",
-        "confidence": "low",
-        "extraTime": true,
-        "penalties": { "team1": 4, "team2": 2 },
-        "analysis": "Affiche de gala! Champions 2019 vs 2023. Match très tactique. Égalité après prolongation, Algérie plus froide aux TAB."
+        "confidence": "medium",
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Remake finale 2019! Algérie parfaite en poules (9 pts). Nigeria redoutable mais les Fennecs plus solides tactiquement."
       },
       "status": "prediction"
     },
@@ -934,15 +934,15 @@
       "date": "2026-01-14",
       "time": "20:00",
       "team1": "senegal",
-      "team2": "maroc",
+      "team2": "cote-d-ivoire",
       "prediction": {
         "score1": 1,
         "score2": 2,
-        "winner": "maroc",
+        "winner": "cote-d-ivoire",
         "confidence": "medium",
-        "extraTime": false,
+        "extraTime": true,
         "penalties": null,
-        "analysis": "Demi-finale de rêve! Maroc porté par son public. Sénégal dangereux mais El Kaabi et Diaz font la différence à domicile."
+        "analysis": "Duel ouest-africain intense! Champions 2021 vs 2023. Côte d'Ivoire plus fraîche et expérimentée, s'impose en prolongation."
       },
       "status": "prediction"
     },
@@ -950,24 +950,6 @@
       "matchId": "sf-2",
       "round": "demis",
       "date": "2026-01-15",
-      "time": "20:00",
-      "team1": "nigeria",
-      "team2": "algerie",
-      "prediction": {
-        "score1": 0,
-        "score2": 1,
-        "winner": "algerie",
-        "confidence": "medium",
-        "extraTime": false,
-        "penalties": null,
-        "analysis": "Remake finale 2019 (Algérie 1-0). Match fermé, Algérie pragmatique. Mahrez décisif sur coup franc. Nigeria frustré."
-      },
-      "status": "prediction"
-    },
-    {
-      "matchId": "final",
-      "round": "finale",
-      "date": "2026-01-18",
       "time": "20:00",
       "team1": "maroc",
       "team2": "algerie",
@@ -978,7 +960,25 @@
         "confidence": "medium",
         "extraTime": false,
         "penalties": null,
-        "analysis": "Finale de rêve Maghreb! Maroc à domicile vs Algérie championne 2019. El Kaabi héros, but en or devant 80 000 supporters. Maroc champion 49 ans après 1976!"
+        "analysis": "DERBY DU MAGHREB! Affiche historique tant attendue. Maroc porté par 80 000 supporters. El Kaabi et Hakimi décisifs. Algérie battue à domicile."
+      },
+      "status": "prediction"
+    },
+    {
+      "matchId": "final",
+      "round": "finale",
+      "date": "2026-01-18",
+      "time": "20:00",
+      "team1": "maroc",
+      "team2": "cote-d-ivoire",
+      "prediction": {
+        "score1": 2,
+        "score2": 1,
+        "winner": "maroc",
+        "confidence": "medium",
+        "extraTime": false,
+        "penalties": null,
+        "analysis": "Finale de gala! Pays hôte vs champions en titre. El Kaabi héros, but en or devant 80 000 supporters. Maroc champion 49 ans après 1976!"
       },
       "status": "prediction"
     },
@@ -988,15 +988,15 @@
       "date": "2026-01-17",
       "time": "20:00",
       "team1": "senegal",
-      "team2": "nigeria",
+      "team2": "algerie",
       "prediction": {
-        "score1": 2,
-        "score2": 2,
-        "winner": "senegal",
+        "score1": 1,
+        "score2": 1,
+        "winner": "algerie",
         "confidence": "low",
         "extraTime": true,
-        "penalties": { "team1": 4, "team2": 3 },
-        "analysis": "Match pour l'honneur. Les deux déçus des demis. Égalité spectaculaire, Sénégal 3ème aux TAB."
+        "penalties": { "team1": 3, "team2": 4 },
+        "analysis": "Match pour l'honneur entre deux déçus. Algérie veut se racheter après la défaite contre le Maroc. Fennecs 3èmes aux TAB."
       },
       "status": "prediction"
     }
