@@ -78,7 +78,12 @@
   text-align: center;
   outline: none;
   transition: all 0.3s ease;
-  caret-color: transparent;
+  caret-color: #ffc107;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .pin-input:focus {

@@ -108,14 +108,16 @@ export default function PinProtection({ correctPin = '1991' }: PinProtectionProp
             <input
               key={index}
               ref={(el) => { inputRefs.current[index] = el; }}
-              type="text"
-              inputMode="numeric"
+              type="tel"
+              pattern="[0-9]*"
               maxLength={1}
               value={digit}
               onChange={(e) => handleChange(index, e.target.value)}
               onKeyDown={(e) => handleKeyDown(index, e)}
+              onFocus={(e) => e.target.select()}
               className={`pin-input ${error ? 'error' : ''} ${digit ? 'filled' : ''}`}
               autoFocus={index === 0}
+              autoComplete="off"
             />
           ))}
         </div>
