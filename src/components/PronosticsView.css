@@ -1265,6 +1265,54 @@
   }
 }
 
+/* ========== BRACKET PHASE STYLES (pour onglets 1/8, 1/4, 1/2) ========== */
+.bracket-phase {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  background: linear-gradient(135deg, #8B0000 0%, #600000 50%, #400000 100%);
+  border-radius: 20px;
+}
+
+.bracket-phase-side {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.bracket-phase-title {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.bracket-phase-title.derby-title {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  color: #2c3e50;
+}
+
+.derby-side .bracket-matchup {
+  border: 2px solid #ffc107;
+}
+
+.bracket-phase-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bracket-phase .bracket-matchup {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
 /* ========== NEW OFFICIAL BRACKET STYLES ========== */
 .bracket-official {
   display: flex;
@@ -1314,9 +1362,10 @@
 .bracket-matchup {
   background: white;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
   min-width: 140px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .bracket-team-row {
@@ -1339,9 +1388,7 @@
   font-weight: 700;
 }
 
-.bracket-right .bracket-team-row {
-  flex-direction: row-reverse;
-}
+/* Côté droit - même format que le gauche (pas d'inversion) */
 
 .team-flag-sm {
   font-size: 1.25rem;
@@ -1356,6 +1403,37 @@
   text-overflow: ellipsis;
 }
 
+.team-score-sm {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2c3e50;
+  min-width: 20px;
+  text-align: center;
+}
+
+.team-score-sm sup {
+  font-size: 0.6rem;
+  color: #c1272d;
+}
+
+.bracket-team-row.qualified .team-score-sm {
+  color: white;
+}
+
+.bracket-extra-tag {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffc107;
+  color: #2c3e50;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 8px;
+  z-index: 2;
+}
+
 .bracket-label {
   background: white;
   color: #8B0000;
@@ -1365,6 +1443,13 @@
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bracket-label.derby-bracket-label {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  color: #2c3e50;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
 }
 
 /* Centre - Finale */
