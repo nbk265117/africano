@@ -720,13 +720,13 @@
       "team1": "senegal",
       "team2": "soudan",
       "prediction": {
-        "score1": 2,
+        "score1": 3,
         "score2": 0,
         "winner": "senegal",
-        "confidence": "high",
+        "confidence": "very_high",
         "extraTime": false,
         "penalties": null,
-        "analysis": "Champion CAN 2021, Sénégal 1er du groupe D (7 pts). Sadio Mané en forme. Soudan qualifié en 3ème avec une seule victoire. Écart de niveau trop important."
+        "analysis": "TIRAGE TRÈS FACILE pour le Sénégal. Champions CAN 2021, 1ers du groupe D (7 pts). Sadio Mané en grande forme. Soudan qualifié en 3ème avec une seule victoire. Le Sénégal devrait passer confortablement sans aucune difficulté."
       },
       "status": "prediction"
     },
@@ -740,11 +740,11 @@
       "prediction": {
         "score1": 1,
         "score2": 1,
-        "winner": "mali",
-        "confidence": "medium",
+        "winner": "tunisie",
+        "confidence": "low",
         "extraTime": true,
-        "penalties": { "team1": 4, "team2": 3 },
-        "analysis": "14ème confrontation, rivalité historique. CAN 2022: Mali 1-0. Match de l'arbitre Sikazwe qui avait sifflé trop tôt! Egalité logique, Mali plus solide aux TAB."
+        "penalties": { "team1": 3, "team2": 4 },
+        "analysis": "TIRAGE TRÈS DIFFICILE - Un des matchs les plus serrés des 8èmes! 14ème confrontation, rivalité historique. Match très compétitif, Mali solide mais Tunisie plus expérimentée. Résultat incertain, la Tunisie l'emporte aux TAB."
       },
       "status": "prediction"
     },
@@ -756,13 +756,13 @@
       "team1": "maroc",
       "team2": "tanzanie",
       "prediction": {
-        "score1": 4,
-        "score2": 0,
+        "score1": 3,
+        "score2": 1,
         "winner": "maroc",
-        "confidence": "very_high",
+        "confidence": "high",
         "extraTime": false,
         "penalties": null,
-        "analysis": "Maroc pays hôte, El Kaabi et Diaz (6 buts à eux deux). Hakimi de retour. Tanzanie 1ère qualif historique en 8èmes mais écart énorme."
+        "analysis": "La Tanzanie peut poser quelques problèmes avec son jeu combatif, mais le Maroc reste largement favori. Pays hôte, El Kaabi et Diaz en forme. Hakimi de retour. Qualification attendue sans trop de difficultés malgré une Tanzanie historique en 8èmes."
       },
       "status": "prediction"
     },
@@ -774,13 +774,13 @@
       "team1": "afrique-du-sud",
       "team2": "cameroun",
       "prediction": {
-        "score1": 0,
+        "score1": 1,
         "score2": 1,
         "winner": "cameroun",
-        "confidence": "medium",
-        "extraTime": false,
-        "penalties": null,
-        "analysis": "Lions Indomptables invincibles en phase de groupes. Cameroun plus expérimenté en CAN (5 titres). Eto'o supervise, l'expérience fait la différence."
+        "confidence": "low",
+        "extraTime": true,
+        "penalties": { "team1": 3, "team2": 4 },
+        "analysis": "TIRAGE TRÈS DIFFICILE - L'un des matchs les plus serrés! Deux équipes solides. Afrique du Sud impressionnante en groupes (6 pts), Cameroun invaincu avec 5 titres CAN. Match ouvert, le Cameroun l'emporte aux TAB grâce à son expérience."
       },
       "status": "prediction"
     },
@@ -793,12 +793,12 @@
       "team2": "benin",
       "prediction": {
         "score1": 2,
-        "score2": 0,
+        "score2": 1,
         "winner": "egypte",
         "confidence": "high",
         "extraTime": false,
         "penalties": null,
-        "analysis": "Égypte record 7 titres CAN. Salah prêt pour les phases finales. Bénin (quart 2019) courageux mais limité."
+        "analysis": "Le Bénin peut causer quelques problèmes avec son organisation défensive, mais l'Égypte reste favorite. 7 titres CAN, Salah prêt. Bénin (quart 2019) courageux mais l'Égypte devrait se qualifier sans difficultés majeures."
       },
       "status": "prediction"
     },
@@ -831,10 +831,10 @@
         "score1": 2,
         "score2": 1,
         "winner": "algerie",
-        "confidence": "medium",
-        "extraTime": false,
+        "confidence": "low",
+        "extraTime": true,
         "penalties": null,
-        "analysis": "Algérie parfaite (9 pts), Mahrez 3 buts. RD Congo demi-finaliste 2023, Kakuta brillant. Match piège mais Fennecs trop forts."
+        "analysis": "TIRAGE TRÈS DIFFICILE - Match piège! Algérie parfaite (9 pts), mais la RD Congo est dangereuse (demi-finaliste 2023, 7 pts en groupes). Kakuta brillant. Deux équipes solides, l'Algérie s'impose en prolongation."
       },
       "status": "prediction"
     },
